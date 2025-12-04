@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Manager</title>
+<link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/jpeg" href="Assets/ClassManagerLogo1.png">
+</head>
+<body>
+
+<!-- Top Navbar -->
+<div class="top">
+    <span id="siteTitle">👨🏻‍🏫 Class Manager</span>
+    <div class="top-right">
+        <div id="contact-Lang" >
+
+
+        <a href="https://saidelhachmy.github.io/#about" target="_blank" class="contact-tab" id="contactLink">Contact</a>
+
+        
+            
+            
+            
+                <!-- Language Switcher -->
+        <div class="lang-switcher">
+            <button class="lang-btn" aria-label="Select language">🌐</button>
+            <div class="lang-menu hidden">
+                <button data-lang="en">English</button>
+                <button data-lang="fr">Français</button>
+                <button data-lang="ar">العربية</button>
+            </div>
+        </div>
+        
+        
+
+            
+            
+        </div>
+
+
+        
+        
+        
+        
+    </div>
+</div>
+
+<!-- Main Container -->
+<div class="container">
+
+    <!-- Left Panel -->
+    <div class="left">
+
+        <!-- Add Section -->
+        <div class="sectionInputBox">
+            <input id="sectionInput" placeholder="New Section Name">
+            <button id="addSectionBtn" class="btn-primary">Add</button>
+        </div>
+        <div id="sectionsList"></div>
+
+        <!-- Active Section Display -->
+        <h3 id="activeSectionName">No Section Selected</h3>
+
+        <!-- Add Student -->
+        <div class="studentInputBox">
+            <input id="studentNameInput" placeholder="Student Name">
+            <input id="studentIDInput" placeholder="ID (default 00001)">
+            <select id="studentEmoji">
+                <option>👦</option>
+                <option>👧</option>
+            </select>
+            <input id="studentTest" type="number" placeholder="Test Score /20" min="0" max="20">
+            <input id="studentExam" type="number" placeholder="Exam Score /20" min="0" max="20">
+            <textarea id="studentNotes" placeholder="Notes"></textarea>
+            <button id="addStudentBtn" class="btn-primary">Add</button>
+        </div>
+
+        <!-- Students List -->
+        <div id="studentsList"></div>
+
+    </div>
+
+</div>
+
+<!-- Student Modal -->
+<div id="studentModalOverlay" class="modal-overlay">
+    <div class="modal">
+        <h2 id="studentModalTitle" style="color:#0078ff;text-shadow: 1.5px 1px lightblue;">Student Details</h2>
+        <div id="studentCardContent"></div>
+        <button id="closeStudentModal" class="modal-close">Close</button>
+    </div>
+</div>
+
+
+<!-- Edit Section Modal -->
+<!-- 
+
+
+<div id="editSectionModalOverlay" class="modal-overlay">
+    <div class="modal">
+        <h2 style="color:#0078ff;text-shadow: 1.5px 1px lightblue;">Edit Section</h2>
+        <input id="editSectionInput" placeholder="New Section Name">
+        <button id="saveEditSectionBtn" class="modal-close">Save</button>
+        <button id="closeEditSectionModal" class="modal-close">Cancel</button>
+    </div>
+</div>
+
+
+<!-- Edit Student Modal -->
+<!-- 
+
+<div id="editStudentModalOverlay" class="modal-overlay">
+    <div class="modal">
+        <h2 style="color:#0078ff;text-shadow: 1.5px 1px lightblue;">Edit Student</h2>
+        <input id="editStudentName" placeholder="Student Name">
+        <input id="editStudentID" placeholder="ID (default 00001)">
+        <select id="editStudentEmoji">
+            <option>👦</option>
+            <option>👧</option>
+        </select>
+        <input id="editStudentTest" type="number" placeholder="Test Score /20" min="0" max="20">
+        <input id="editStudentExam" type="number" placeholder="Exam Score /20" min="0" max="20">
+        <textarea id="editStudentNotes" placeholder="Notes"></textarea>
+        <button id="saveEditStudentBtn" class="modal-close">Save</button>
+        <button id="closeEditStudentModal" class="modal-close">Cancel</button>
+    </div>
+</div> 
+
+ -->
+
+
+
+<!-- Generic Edit Modal -->
+<div id="editModalOverlay" class="hidden">
+  <div id="editModalContent" class="modal-card">
+    <h2 id="editModalTitle"></h2>
+    <div id="editModalBody"></div>
+    <div style="margin-top:15px;text-align:right;">
+      <button id="editModalCancel">Cancel</button>
+      <button id="editModalSave">Save</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Confirm Delete Modal -->
+<div id="confirmRemoveOverlay" class="confirm-overlay hidden">
+    <div class="confirm-box">
+        <p id="confirmMessage"></p>
+        <div class="confirm-buttons">
+            <button id="confirmYes" class="btn-yes">Yes</button>
+            <button id="confirmCancel" class="btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<footer id="footer">
+    © <span id="year"></span> <span id="author"style="color:black; font-weight: normal;">Said ElHachmy</span>. <span id="allRights" style="color:black; font-weight: normal;">All rights reserved.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
