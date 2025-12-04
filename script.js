@@ -20,8 +20,8 @@ const translations = {
         gender:"Gender",
         studentTestCard: "Test score",
         studentExamCard: "Exam score",
-        studentTest: "Test score /20",
-        studentExam: "Exam score /20",
+        studentTest: "Test score (e.g., 17/20, 26/30, 37/40)",
+        studentExam: "Exam score (e.g., 17/20, 26/30, 37/40)",
         studentNotes: "Notes",
         addStudent: "Add",
         studentDetails: "Student Details",
@@ -51,8 +51,9 @@ const translations = {
         gender:"Genre",
         studentTestCard: "Note du test",
         studentExamCard: "Note de l'examen",
-        studentTest: "Note du test /20",
-        studentExam: "Note de l'examen /20",
+        studentTest: "Score du test (par ex., 17/20, 26/30, 37/40)",
+        
+        studentExam: "Score de l'examen (par ex., 17/20, 26/30, 37/40)",
         studentNotes: "Notes",
         addStudent: "Ajouter",
         studentDetails: "Détails de l'élève",
@@ -82,8 +83,9 @@ const translations = {
         gender:"الجنس",
         studentTestCard: "درجة الاختبار",
         studentExamCard: "درجة الامتحان",
-        studentTest: "درجة الاختبار /20",
-        studentExam: "درجة الامتحان /20",
+        studentTest: "درجة الاختبار (مثال: 17/20، 26/30، 37/40)",
+        studentExam: "درجة الامتحان (مثال: 17/20، 26/30، 37/40)",
+       
         studentNotes: "الملاحظات",
         addStudent: "أضف",
         studentDetails: "تفاصيل الطالب",
@@ -536,8 +538,8 @@ addStudentBtn.onclick = () => {
         id: studentIDInput.value.trim() || "00001",
         emoji: studentEmoji.value,
         notes: studentNotes.value.trim(),
-        test: studentTest.value.trim() || "0",
-        exam: studentExam.value.trim() || "0"
+        test: studentTest.value.trim() || "–",
+        exam: studentExam.value.trim() || "–"
     };
     if (!student.name) return;
     data.sections[activeSectionIndex].students.push(student);
@@ -575,8 +577,8 @@ function openStudentModal(student) {
             <hr style="margin:15px 0;border:1px dashed #0078ff;">
             <p><span style="color:#0078ff"><strong>${t("section")}:</strong></span> ${sectionName || "—"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentNotes")}:</strong></span> ${student.notes || "—"}</p>
-            <p><span style="color:#0078ff"><strong>${t("studentTestCard")}:</strong></span> ${student.test || 0}/20</p>
-            <p><span style="color:#0078ff"><strong>${t("studentExamCard")}:</strong></span> ${student.exam || 0}/20</p>
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard")}:</strong></span> ${student.test || "–"}</p>
+            <p><span style="color:#0078ff"><strong>${t("studentExamCard")}:</strong></span> ${student.exam || "–"}</p>
         </div>
     `;
     studentModalOverlay.style.display = "flex";
@@ -689,12 +691,12 @@ function openEditStudentModal(sectionIndex, studentIndex) {
 
             <div style="display:flex;gap:12px;margin-top:12px;">
                 <div style="flex:1;">
-                    <label for="editStudentTest" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTest')}</label>
-                    <input id="editStudentTest" type="number" min="0" max="20" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test)}" />
+                    <label for="editStudentTest" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard')}</label>
+                    <input id="editStudentTest" type="text" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test)}" />
                 </div>
                 <div style="flex:1;">
-                    <label for="editStudentExam" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentExam')}</label>
-                    <input id="editStudentExam" type="number" min="0" max="20" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
+                    <label for="editStudentExam" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentExamCard')}</label>
+                    <input id="editStudentExam" type="text"  style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
                 </div>
             </div>
         </div>
@@ -721,8 +723,8 @@ function openEditStudentModal(sectionIndex, studentIndex) {
         const newEmoji = (document.getElementById('editStudentEmoji')?.value || '👦🏻').trim();
         const newSectionIdx = parseInt(document.getElementById('editStudentSection')?.value, 10);
         const newNotes = (document.getElementById('editStudentNotes')?.value || '').trim();
-        const newTest = (document.getElementById('editStudentTest')?.value || '').trim() || '0';
-        const newExam = (document.getElementById('editStudentExam')?.value || '').trim() || '0';
+        const newTest = (document.getElementById('editStudentTest')?.value || '').trim() || '–';
+        const newExam = (document.getElementById('editStudentExam')?.value || '').trim() || '–';
 
         const studentObj = {
             name: newName,
