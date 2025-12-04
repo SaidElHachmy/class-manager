@@ -923,11 +923,11 @@ function openEditStudentModal(sectionIndex, studentIndex) {
             <div style="display:flex;gap:12px;margin-top:12px;">
                 <div style="flex:1;">
                     <label for="editStudentTest" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTest')}</label>
-                    <input id="editStudentTest" type="number" min="0" max="20" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test)}" />
+                    <input id="editStudentTest" type="number" min="0" max="20" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test)}" />
                 </div>
                 <div style="flex:1;">
                     <label for="editStudentExam" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentExam')}</label>
-                    <input id="editStudentExam" type="number" min="0" max="20" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
+                    <input id="editStudentExam" type="number" min="0" max="20" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
                 </div>
             </div>
         </div>
