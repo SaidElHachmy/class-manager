@@ -891,7 +891,7 @@ function openEditStudentModal(sectionIndex, studentIndex) {
                 </div>
                 <div style="flex:1;">
                     <label for="editStudentName" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentName')}</label>
-                    <input id="editStudentName" style="width:95%;padding:8px;border-radius:8px;border:1px solid red;margin:0px 5px" value="${escapeHtml(student.name)}" />
+                    <input id="editStudentName" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;margin:0px 5px" value="${escapeHtml(student.name)}" />
                 </div>
             </div>
 
