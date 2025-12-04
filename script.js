@@ -17,6 +17,7 @@ const translations = {
         section: "Section",
         id: "ID",
         studentNameCard: "Name",
+        gender:"Gender",
         studentTestCard: "Test score",
         studentExamCard: "Exam score",
         studentTest: "Test score /20",
@@ -47,6 +48,7 @@ const translations = {
         section: "Section",
         id: "ID",
         studentNameCard: "Nom",
+        gender:"Genre",
         studentTestCard: "Note du test",
         studentExamCard: "Note de l'examen",
         studentTest: "Note du test /20",
@@ -77,6 +79,7 @@ const translations = {
         section: "القسم",
         id: "المعرف",
         studentNameCard: "الاسم",
+        gender:"الجنس",
         studentTestCard: "درجة الاختبار",
         studentExamCard: "درجة الامتحان",
         studentTest: "درجة الاختبار /20",
@@ -274,86 +277,6 @@ function showConfirm(message, callback) {
 // ===============================
 // ====== Section Functions ======
 // ===============================
-/*
-function renderSections() {
-    sectionsList.innerHTML = "";
-    data.sections.forEach((section, index) => {
-        const div = document.createElement('div');
-        div.className = 'section-item';
-        div.style.display = 'flex';
-        div.style.alignItems = 'center';
-        div.style.justifyContent = 'space-between';
-        div.style.gap = '8px';
-
-        const left = document.createElement('div');
-        left.style.display = 'flex';
-        left.style.alignItems = 'center';
-        left.style.gap = '8px';
-        left.appendChild(document.createElement('span')).textContent = section.name;
-
-        const right = document.createElement('div');
-
-        const editBtn = document.createElement('button');
-        editBtn.className = 'btn-edit';
-        editBtn.title = t('edit') || 'Edit';
-        editBtn.textContent = '✏️';
-        editBtn.onclick = (e) => {
-            e.stopPropagation();
-            openEditSectionModal(index);
-        };
-
-        const delBtn = document.createElement('button');
-        delBtn.className = 'btn-del';
-        delBtn.textContent = t("cancel");
-        delBtn.onclick = (e) => {
-            e.stopPropagation();
-            showConfirm(t("confirmDeleteSection", { name: section.name }), () => {
-                data.sections.splice(index, 1);
-                // adjust activeSectionIndex if necessary
-                if (activeSectionIndex === index) activeSectionIndex = null;
-                else if (activeSectionIndex > index) activeSectionIndex--;
-                saveAll();
-                updateTexts();
-            });
-        };
-
-        right.appendChild(editBtn);
-        right.appendChild(delBtn);
-
-        // assemble
-        // Put name as text node (span was appended incorrectly above — fix)
-        const nameSpan = document.createElement('span');
-        nameSpan.textContent = section.name;
-        left.replaceChild(nameSpan, left.firstChild);
-
-        div.appendChild(left);
-        div.appendChild(right);
-
-        div.onclick = () => {
-            activeSectionIndex = index;
-            renderStudents();
-            activeSectionName.textContent = section.name;
-        };
-
-        sectionsList.appendChild(div);
-    });
-}
-
-addSectionBtn.onclick = () => {
-    const name = sectionInput.value.trim();
-    if (!name) return;
-    data.sections.push({ name, students: [] });
-    sectionInput.value = "";
-    saveAll();
-    updateTexts();
-};
-
-
-*/
-
-// ===============================
-// ====== Section Functions ======
-// ===============================
 function renderSections() {
     sectionsList.innerHTML = "";
     data.sections.forEach((section, index) => {
@@ -400,10 +323,7 @@ function renderSections() {
         div.style.border="2px solid #0078ff"
         div.style.height="auto"
         div.style.width="auto"
-        //div.style.width="290px"
-        //div.style.maxWidth="300px"
-      //  div.style.padding="3px 5px"
-      //  div.style.borderRadius="3px"
+
         div.style.margin="2px 3px"
         div.className = 'section-item';
 
@@ -411,18 +331,7 @@ function renderSections() {
         editBtn.className = 'btn-edit';
         editBtn.textContent = '✏️';
         
-        /*
-        editBtn.onclick = (e) => {
-            e.stopPropagation();
-            const newName = prompt(t("sectionPlaceholder"), section.name);
-            if (newName && newName.trim()) {
-                section.name = newName.trim();
-                saveAll();
-                updateTexts();
-            }
-        };
-        
-        */
+
         editBtn.onclick = (e) => {
     e.stopPropagation();
     openEditSectionModal(index);
@@ -442,7 +351,7 @@ function renderSections() {
             });
         };
 
-        //div.appendChild(document.createElement('span')).textContent = section.name;
+
          sectionInsideNameDiv.appendChild(document.createElement('span')).textContent = section.name;
         
         sectionInsideDiv.appendChild(editBtn);
@@ -450,8 +359,6 @@ function renderSections() {
         
         div.appendChild(sectionInsideNameDiv);
         div.appendChild(sectionInsideDiv);
-        //div.appendChild(editBtn);
-        //div.appendChild(delBtn);
 
         div.onclick = () => {
             activeSectionIndex = index;
@@ -485,93 +392,6 @@ function truncateText(text, maxLength = 15) {
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
 }
 
-
-
-/*
-
-function renderStudents() {
-    studentsList.innerHTML = "";
-    if (activeSectionIndex === null) return;
-    const section = data.sections[activeSectionIndex];
-    section.students.forEach((student, index) => {
-        const div = document.createElement('div');
-        div.style.padding = "3px 2px";
-        div.className = 'student-item';
-
-        const emojiBox = document.createElement('div');
-        emojiBox.id = "emojiBox";
-        const emojiDiv = document.createElement('div');
-        emojiDiv.id = "emojiBorder";
-        emojiDiv.style.cssText = "font-size:20px;border:2px solid #0078ff;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:5px;";
-        emojiDiv.textContent = student.emoji || '👦🏻';
-        emojiBox.appendChild(emojiDiv);
-
-        const nameDiv = document.createElement('div');
-        nameDiv.id = "nameDiv";
-        nameDiv.textContent = truncateText(student.name, 15); // truncate displayed name
-        nameDiv.title = student.name; // full name on hover
-
-        const btnDiv = document.createElement('div');
-        btnDiv.id = "btnDiv";
-
-        const openBtn = document.createElement('button');
-        openBtn.style.margin = "5px 4px";
-        openBtn.className = "btn-open";
-        openBtn.textContent = t("studentOpen");
-        openBtn.onclick = () => openStudentModal(student);
-
-        const editBtn = document.createElement('button');
-        editBtn.style.margin = "5px 4px";
-        editBtn.className = "btn-edit";
-        editBtn.textContent = "✏️";
-        editBtn.onclick = (e) => {
-            e.stopPropagation();
-            openEditStudentModal(activeSectionIndex, index);
-        };
-
-        const delBtn = document.createElement('button');
-        delBtn.style.margin = "5px 4px";
-        delBtn.className = "btn-del";
-        delBtn.textContent = t("cancel");
-        delBtn.onclick = (e) => {
-            e.stopPropagation();
-            showConfirm(t("confirmDeleteStudent", { name: student.name }), () => {
-                section.students.splice(index, 1);
-                saveAll();
-                renderStudents();
-            });
-        };
-
-        btnDiv.appendChild(openBtn);
-        btnDiv.appendChild(editBtn);
-        btnDiv.appendChild(delBtn);
-
-        div.appendChild(emojiBox);
-        div.appendChild(nameDiv);
-        div.appendChild(btnDiv);
-        studentsList.appendChild(div);
-    });
-}
-
-addStudentBtn.onclick = () => {
-    if (activeSectionIndex === null) { alert(t("selectSectionFirst")); return; }
-    const student = {
-        name: studentNameInput.value.trim(),
-        id: studentIDInput.value.trim() || "00001",
-        emoji: studentEmoji.value,
-        notes: studentNotes.value.trim(),
-        test: studentTest.value.trim() || "0",
-        exam: studentExam.value.trim() || "0"
-    };
-    if (!student.name) return;
-    data.sections[activeSectionIndex].students.push(student);
-    studentNameInput.value = studentIDInput.value = studentNotes.value = studentTest.value = studentExam.value = "";
-    saveAll();
-    renderStudents();
-};
-
-
-*/
 
 
 // ===============================
@@ -639,10 +459,7 @@ function renderStudents() {
         div.style.border="2px solid #0078ff"
         div.style.height="auto"
         div.style.width="auto"
-        //div.style.width="290px"
-        //div.style.maxWidth="300px"
-      //  div.style.padding="3px 5px"
-      //  div.style.borderRadius="3px"
+
         div.style.margin="2px 3px"
         div.className = 'student-item';
         
@@ -687,16 +504,10 @@ function renderStudents() {
         });
 
         
-        /*
-        btnDiv.appendChild(openBtn);
-        btnDiv.appendChild(editBtn);
-        btnDiv.appendChild(delBtn);
-        */
-        
 
-        //div.appendChild(emojiBox);
+
         studentInsideNameDiv.appendChild(nameDiv);
-        //div.appendChild(btnDiv);
+
         
         
         studentInsideDiv.appendChild(editBtn);
@@ -706,20 +517,14 @@ function renderStudents() {
         studentInsideDiv.appendChild(delBtn);
         
         
-        //div.appendChild(emojiBox);
+
         studentInsideEmojiDiv.appendChild(emojiBox);
         
-        //div.appendChild(nameDiv);
+
         div.appendChild(studentInsideEmojiDiv);
         div.appendChild(studentInsideNameDiv);
         div.appendChild(studentInsideDiv);
-        /*
-        sectionInsideDiv.appendChild(editBtn);
-        sectionInsideDiv.appendChild(delBtn);
-        div.appendChild(sectionInsideDiv);
-        */
-        //div.appendChild(editBtn);
-        //div.appendChild(delBtn);
+
         studentsList.prepend(div);
     });
 }
@@ -786,44 +591,6 @@ if (closeStudentModal) closeStudentModal.onclick = () => {
 // ===============================
 // ====== Edit Section Modal ======
 // ===============================
-
-
-/*
-
-function openEditSectionModal(sectionIndex) {
-    editMode = 'section';
-    editSectionIndex = sectionIndex;
-    const section = data.sections[sectionIndex] || { name: '' };
-
-    editModalTitle.textContent = t('section'); // label as title
-    editModalContent.innerHTML = `
-        <div style="border:3px solid #0078ff;padding:12px;border-radius:12px;background:rgba(255,255,255,0.55);backdrop-filter: blur(3px);">
-            <label for="editSectionName" style="display:block;margin-bottom:8px;font-weight:600;color:#0078ff;">${t('section')}</label>
-            <input id="editSectionName" style="width:100%;padding:10px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(section.name)}" />
-        </div>
-    `;
-
-    // set save handler
-    saveEditBtn.onclick = () => {
-        const newName = document.getElementById('editSectionName').value.trim();
-        if (!newName) return alert(t('sectionPlaceholder'));
-        data.sections[editSectionIndex].name = newName;
-        saveAll();
-        updateTexts();
-        closeEditModal();
-    };
-
-    editModalOverlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-
-    // Focus input
-    setTimeout(() => {
-        const el = document.getElementById('editSectionName');
-        if (el) el.focus();
-    }, 50);
-}
-
-*/
 
 
 
@@ -901,7 +668,7 @@ function openEditStudentModal(sectionIndex, studentIndex) {
             </div>
 
             <div style="margin-top:12px;">
-                <label for="editStudentEmoji" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">Gender</label>
+                <label for="editStudentEmoji" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('gender')}</label>
                 <select id="editStudentEmoji" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;">
                     <option value="👦🏻" ${student.emoji === '👦🏻' ? 'selected' : ''}>👦🏻</option>
                     <option value="👧🏻" ${student.emoji === '👧🏻' ? 'selected' : ''}>👧🏻</option>
