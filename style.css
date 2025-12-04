@@ -1,0 +1,482 @@
+/* =======================================================
+   GLOBAL
+   ======================================================= */
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #dfe9ff, #f3f6ff);
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #222;
+}
+
+/* =======================================================
+   TOP BAR
+   ======================================================= */
+.top {
+    background: linear-gradient(135deg, #006eff, #4da3ff);
+    color: white;
+    padding: 18px 28px;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 4px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 12px rgba(0, 60, 150, 0.25);
+}
+
+.top-right .contact-tab {
+    color: #0078ff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 1);
+    padding: 5px 13px;
+    border: 2px solid #0078ff;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.25s ease;
+    font-weight: 500;
+}
+
+.top-right .contact-tab:hover {
+    background: #007aff;
+    color: white;
+    
+    border: 2px solid white;
+    box-shadow: 0 4px 20px white;
+    transform: translateY(-2px);
+}
+
+/* Language menu toggle */
+.lang-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #0078ff;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1002;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 1);
+    color: #0078ff;
+    border: 2px solid #0078ff;
+    box-shadow: 0 0 10px #0078ff;
+    padding: 4px 6px;
+    margin: 0px 5px;
+    font-size: 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#contact-Lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 5px 6px;
+    height: 50px;
+    border: none;
+}
+#btnDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 5px 6px;
+    height: 50px;
+    border: none;
+}
+#nameDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: auto;
+    padding: auto 6px;
+    height: 50px;
+    border: none;
+}
+
+#emojiBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 5px 6px;
+    height: 50px;
+    border: none;
+}
+
+
+
+
+
+
+#contactLink {
+    background: rgba(255, 255, 255, 1);
+    color: #0078ff;
+    border: 2px solid #0078ff;
+    box-shadow: 0 0 10px #0078ff;
+    padding: 4px 6px;
+    font-weight: bold;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    /* Center text horizontally & vertically */
+    display: flex;
+    align-items: center;   /* vertical centering */
+    justify-content: center; /* horizontal centering */
+    text-align: center;    /* fallback for multi-line text */
+}
+
+.lang-menu.hidden {
+    display: none;
+}
+
+.lang-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    
+    background: white;
+    cursor: pointer;
+    text-align: right;
+}
+
+.lang-menu button:hover {
+    background: #0078ff;
+    color: white;
+}
+
+/* =======================================================
+   CONTAINERS
+   ======================================================= */
+.container {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.left {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 12px 35px rgba(0, 0, 80, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================================================
+   FORM BOXES
+   ======================================================= */
+.sectionInputBox,
+.studentInputBox {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: inset 0 0 3px #0078ff;
+    border: 1px solid #0078ff;
+    margin-bottom: 18px;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #b7c9f3;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4c8aff;
+    box-shadow: 0 0 8px rgba(76, 138, 255, 0.5);
+    outline: none;
+    background: white;
+}
+
+textarea {
+    height: 60px;
+    resize: none;
+}
+
+/* =======================================================
+   BUTTONS
+   ======================================================= */
+.btn-primary {
+    background: linear-gradient(135deg, #0078ff, #005fd9);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 80, 200, 0.25);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0063d4, #004cb1);
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 80, 200, 0.35);
+}
+
+.student-item .btn-open {
+    background: #4d8fff;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+}
+
+.student-item .btn-open:hover {
+    background: #316dcc;
+}
+
+/* Delete Buttons */
+.section-item .btn-del,
+.student-item .btn-del {
+    background: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.section-item .btn-del:hover,
+.student-item .btn-del:hover {
+    background: #d83a3a;
+    transform: scale(1.05);
+}
+
+.btn-edit {
+    background: none;
+    color: white;
+    margin: 2px;
+    border: 2px solid green;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+
+
+/* =======================================================
+   LISTS
+   ======================================================= */
+#sectionsList,
+#studentsList {
+    margin-top: 12px;
+}
+
+.section-item,
+.student-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 7px;
+    color: #0078ff;
+    border-radius: 12px;
+    background: white;
+    backdrop-filter: blur(8px);
+    border: 2px solid #0078ff;
+    transition: 0.25s ease;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.section-item:hover,
+.student-item:hover {
+    background: white;
+    transform: translateX(4px);
+    color: green;
+    border: 2px solid green;
+    box-shadow: 0 4px 12px green;
+}
+
+/* =======================================================
+   MODALS
+   ======================================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 40, 0.55);
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 15px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.modal {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(1px);
+    padding: 25px;
+    width: 300px;
+    max-width: 85%;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px #0078ff;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+    background: #ff3b3b;
+    border: none;
+    color: white;
+    padding: 10px 14px;
+    margin: 10px auto;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #d92c2c;
+}
+
+
+#editModalOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(3px);
+  border: 3px solid #0078ff;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 300px;
+  max-width: 400px;
+  color: #222;
+}
+
+
+
+
+
+
+/* =======================================================
+   CONFIRM BOX
+   ======================================================= */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 40, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.confirm-overlay.hidden {
+    display: none;
+}
+
+.confirm-box {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 8px 25px rgba(0, 0, 80, 0.2);
+}
+
+.btn-yes,
+.btn-cancel {
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.btn-yes {
+    background: #0078ff;
+    color: white;
+}
+
+.btn-yes:hover {
+    background: #005fd0;
+}
+
+.btn-cancel {
+    background: #ff3b3b;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background: #d92c2c;
+}
+
+/* =======================================================
+   FOOTER
+   ======================================================= */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background: none;
+    font-size: 17px;
+    margin: 25px auto;
+}
+
+footer span {
+    font-weight: bold;
+    color: #0078ff;
+}
