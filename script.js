@@ -603,7 +603,7 @@ function openEditSectionModal(sectionIndex) {
     editModalContent.innerHTML = `
         <div style="border:3px solid #0078ff;padding:12px;border-radius:12px;background:rgba(255,255,255,0.55);backdrop-filter: blur(3px);">
             <label for="editSectionName" style="display:block;margin-bottom:8px;font-weight:600;color:#0078ff;">${t('section')}</label>
-            <input id="editSectionName" style="width:90%;padding:10px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(section.name)}" />
+            <input id="editSectionName" style="width:90%;padding:10px;border-radius:8px;border:1px solid red;" value="${escapeHtml(section.name)}" />
         </div>
     `;
 
