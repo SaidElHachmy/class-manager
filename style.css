@@ -206,6 +206,7 @@ input,
 select,
 textarea {
     padding: 10px;
+    
     border-radius: 10px;
     border: 1px solid #b7c9f3;
     background: rgba(255, 255, 255, 0.85);
@@ -286,7 +287,7 @@ textarea {
     background: none;
     color: white;
     margin: 2px;
-    border: 2px solid green;
+    border: 2px solid #0078ff;
     padding: 4px 8px;
     border-radius: 8px;
     cursor: pointer;
@@ -324,9 +325,9 @@ textarea {
 .student-item:hover {
     background: white;
     transform: translateX(4px);
-    color: green;
-    border: 2px solid green;
-    box-shadow: 0 4px 12px green;
+    color: #0078ff;
+    border: 2px solid #0078ff;
+    box-shadow: 0 4px 12px #0078ff;
 }
 
 /* =======================================================
@@ -479,4 +480,4 @@ footer {
 footer span {
     font-weight: bold;
     color: #0078ff;
-}
+   }
