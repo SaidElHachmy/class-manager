@@ -836,7 +836,7 @@ function openEditSectionModal(sectionIndex) {
     editModalContent.innerHTML = `
         <div style="border:3px solid #0078ff;padding:12px;border-radius:12px;background:rgba(255,255,255,0.55);backdrop-filter: blur(3px);">
             <label for="editSectionName" style="display:block;margin-bottom:8px;font-weight:600;color:#0078ff;">${t('section')}</label>
-            <input id="editSectionName" style="width:100%;padding:10px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(section.name)}" />
+            <input id="editSectionName" style="width:95%;padding:10px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(section.name)}" />
         </div>
     `;
 
@@ -891,18 +891,18 @@ function openEditStudentModal(sectionIndex, studentIndex) {
                 </div>
                 <div style="flex:1;">
                     <label for="editStudentName" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentName')}</label>
-                    <input id="editStudentName" style="width:100%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.name)}" />
+                    <input id="editStudentName" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.name)}" />
                 </div>
             </div>
 
             <div style="margin-top:12px;">
                 <label for="editStudentID" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('id')}</label>
-                <input id="editStudentID" style="width:100%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.id)}" />
+                <input id="editStudentID" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.id)}" />
             </div>
 
             <div style="margin-top:12px;">
                 <label for="editStudentEmoji" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">Gender</label>
-                <select id="editStudentEmoji" style="width:100%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;">
+                <select id="editStudentEmoji" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;">
                     <option value="👦🏻" ${student.emoji === '👦🏻' ? 'selected' : ''}>👦🏻</option>
                     <option value="👧🏻" ${student.emoji === '👧🏻' ? 'selected' : ''}>👧🏻</option>
                 </select>
@@ -910,24 +910,24 @@ function openEditStudentModal(sectionIndex, studentIndex) {
 
             <div style="margin-top:12px;">
                 <label for="editStudentSection" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('section')}</label>
-                <select id="editStudentSection" style="width:100%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;">
+                <select id="editStudentSection" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;">
                     ${sectionOptions}
                 </select>
             </div>
 
             <div style="margin-top:12px;">
                 <label for="editStudentNotes" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentNotes')}</label>
-                <textarea id="editStudentNotes" style="width:100%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;height:80px;">${escapeHtml(student.notes)}</textarea>
+                <textarea id="editStudentNotes" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;height:80px;">${escapeHtml(student.notes)}</textarea>
             </div>
 
             <div style="display:flex;gap:12px;margin-top:12px;">
                 <div style="flex:1;">
                     <label for="editStudentTest" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTest')}</label>
-                    <input id="editStudentTest" type="number" min="0" max="20" style="width:100%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test)}" />
+                    <input id="editStudentTest" type="number" min="0" max="20" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test)}" />
                 </div>
                 <div style="flex:1;">
                     <label for="editStudentExam" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentExam')}</label>
-                    <input id="editStudentExam" type="number" min="0" max="20" style="width:100%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
+                    <input id="editStudentExam" type="number" min="0" max="20" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
                 </div>
             </div>
         </div>
