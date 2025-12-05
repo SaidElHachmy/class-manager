@@ -611,20 +611,16 @@ function openStudentModal(student) {
             
             
             
-            
-
 <p>
   <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span> 
   ${student.phoneCall || "–"} 
   <button 
     style="margin-left:8px;padding:4px 8px;font-size:16px;border:2px solid #0078ff;border-radius:6px;background:white;cursor:pointer;"
-    onclick="window.location.href='tel:${student.phoneCall}'"
-    ${!student.phoneCall ? 'disabled' : ''}
+    ${student.phoneCall ? `onclick="window.location.href='tel:${student.phoneCall}'"` : 'disabled style="cursor:not-allowed;opacity:0.5;"'}
   >
     📞
   </button>
 </p>
-            
             
             
             
