@@ -16,7 +16,7 @@ const translations = {
         studentID: "ID (default 00001)",
         section: "Section",
         id: "ID",
-        callParents:"Parents' Phone Number",
+        callParents:"Parents' Tel",
        
        
         callParentsPlaceholder: "Parents' Phone Number",
@@ -52,7 +52,7 @@ const translations = {
         studentID: "ID (défaut 00001)",
         section: "Section",
         id: "ID",
-        callParents: "Numéro de téléphone des parents",
+        callParents: "Tél. parents",
         
         callParentsPlaceholder: "Numéro de téléphone des parents",
         
@@ -89,8 +89,9 @@ const translations = {
         studentID: "المعرف (الافتراضي 00001)",
         section: "القسم",
         
-        callParents: "رقم هاتف ولي الأمر",
+        callParents: "هاتف الولي",
         
+
         callParentsPlaceholder: "رقم هاتف ولي الأمر",
         
         
