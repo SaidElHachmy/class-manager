@@ -16,6 +16,11 @@ const translations = {
         studentID: "ID (default 00001)",
         section: "Section",
         id: "ID",
+        callParents:"Parents' Phone Number",
+       
+       
+        callParentsPlaceholder: "Parents' Phone Number",
+        
         studentNameCard: "Name",
         gender:"Gender",
         studentTestCard: "Test score",
@@ -47,6 +52,11 @@ const translations = {
         studentID: "ID (défaut 00001)",
         section: "Section",
         id: "ID",
+        callParents: "Numéro de téléphone des parents",
+        
+        callParentsPlaceholder: "Numéro de téléphone des parents",
+        
+        
         studentNameCard: "Nom",
         gender:"Genre",
         studentTestCard: "Note du test",
@@ -78,6 +88,13 @@ const translations = {
         studentName: "اسم الطالب",
         studentID: "المعرف (الافتراضي 00001)",
         section: "القسم",
+        
+        callParents: "رقم هاتف ولي الأمر",
+        
+        callParentsPlaceholder: "رقم هاتف ولي الأمر",
+        
+        
+      
         id: "المعرف",
         studentNameCard: "الاسم",
         gender:"الجنس",
@@ -114,6 +131,11 @@ const activeSectionName = document.getElementById('activeSectionName');
 const studentNameInput = document.getElementById('studentNameInput');
 const studentIDInput = document.getElementById('studentIDInput');
 const studentEmoji = document.getElementById('studentEmoji');
+
+const callParents = document.getElementById('callParents');
+
+
+
 const studentTest = document.getElementById('studentTest');
 const studentExam = document.getElementById('studentExam');
 const studentNotes = document.getElementById('studentNotes');
@@ -247,6 +269,13 @@ function updateTexts() {
     studentNameInput.placeholder = t("studentName");
     studentIDInput.placeholder = t("studentID");
     studentTest.placeholder = t("studentTest");
+    
+    callParents.callParents = t("callParents");
+    callParents.placeholder = t("callParentsPlaceholder");
+    
+    
+    
+    
     studentExam.placeholder = t("studentExam");
     studentNotes.placeholder = t("studentNotes");
     addStudentBtn.textContent = t("addStudent");
@@ -536,6 +565,7 @@ addStudentBtn.onclick = () => {
     const student = {
         name: studentNameInput.value.trim(),
         id: studentIDInput.value.trim() || "00001",
+        phoneCall:callParents.value.trim() || "–",
         emoji: studentEmoji.value,
         notes: studentNotes.value.trim(),
         test: studentTest.value.trim() || "–",
@@ -543,7 +573,7 @@ addStudentBtn.onclick = () => {
     };
     if (!student.name) return;
     data.sections[activeSectionIndex].students.push(student);
-    studentNameInput.value = studentIDInput.value = studentNotes.value = studentTest.value = studentExam.value = "";
+    studentNameInput.value = studentIDInput.value = callParents.value = studentNotes.value = studentTest.value = studentExam.value = "";
     saveAll();
     renderStudents();
 };
@@ -559,6 +589,7 @@ addStudentBtn.onclick = () => {
 // ===============================
 // ====== Student Modal (view) ====
 // ===============================
+
 function openStudentModal(student) {
     if (!studentCardContent || !studentModalOverlay) return;
     const sectionName = data.sections[activeSectionIndex]?.name || '';
@@ -575,6 +606,29 @@ function openStudentModal(student) {
                 
             </div>
             <hr style="margin:15px 0;border:1px dashed #0078ff;">
+            
+            
+            
+            
+            
+
+<p>
+  <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span> 
+  ${student.phoneCall || "–"} 
+  <button 
+    style="margin-left:8px;padding:4px 8px;font-size:16px;border:2px solid #0078ff;border-radius:6px;background:white;cursor:pointer;"
+    onclick="window.location.href='tel:${student.phoneCall}'"
+    ${!student.phoneCall ? 'disabled' : ''}
+  >
+    📞
+  </button>
+</p>
+            
+            
+            
+            
+            
+            
             <p><span style="color:#0078ff"><strong>${t("section")}:</strong></span> ${sectionName || "—"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentNotes")}:</strong></span> ${student.notes || "—"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentTestCard")}:</strong></span> ${student.test || "–"}</p>
@@ -589,6 +643,11 @@ if (closeStudentModal) closeStudentModal.onclick = () => {
     studentModalOverlay.style.display = 'none';
     document.body.style.overflow = '';
 };
+
+
+
+
+
 
 // ===============================
 // ====== Edit Section Modal ======
@@ -640,13 +699,15 @@ function openEditSectionModal(sectionIndex) {
 // ===============================
 // ====== Edit Student Modal ======
 // ===============================
+// ===============================
+// ====== Edit Student Modal ======
+// ===============================
 function openEditStudentModal(sectionIndex, studentIndex) {
     editMode = 'student';
     editStudentSectionIndex = sectionIndex;
     editStudentIndex = studentIndex;
     const student = data.sections[sectionIndex].students[studentIndex];
 
-    // Build section options list (selected is current sectionIndex)
     const sectionOptions = data.sections.map((s, i) =>
         `<option value="${i}" ${i === sectionIndex ? 'selected' : ''}>${escapeHtml(s.name)}</option>`
     ).join('');
@@ -670,6 +731,9 @@ function openEditStudentModal(sectionIndex, studentIndex) {
             </div>
 
             <div style="margin-top:12px;">
+                <label for="editCallParents" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('callParents')}</label>
+                <input id="editCallParents" type="tel" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.phoneCall || '')}" />
+
                 <label for="editStudentEmoji" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('gender')}</label>
                 <select id="editStudentEmoji" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;">
                     <option value="👦🏻" ${student.emoji === '👦🏻' ? 'selected' : ''}>👦🏻</option>
@@ -696,13 +760,13 @@ function openEditStudentModal(sectionIndex, studentIndex) {
                 </div>
                 <div style="flex:1;">
                     <label for="editStudentExam" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentExamCard')}</label>
-                    <input id="editStudentExam" type="text"  style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
+                    <input id="editStudentExam" type="text" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
                 </div>
             </div>
         </div>
     `;
 
-    // Keep preview updated when emoji select changes
+    // Update emoji preview
     setTimeout(() => {
         const emojiSelect = document.getElementById('editStudentEmoji');
         const emojiPreview = document.getElementById('editEmojiPreview');
@@ -719,12 +783,14 @@ function openEditStudentModal(sectionIndex, studentIndex) {
     saveEditBtn.onclick = () => {
         const newName = (document.getElementById('editStudentName')?.value || '').trim();
         if (!newName) return alert(t('studentName'));
+
         const newID = (document.getElementById('editStudentID')?.value || '').trim() || '00001';
         const newEmoji = (document.getElementById('editStudentEmoji')?.value || '👦🏻').trim();
         const newSectionIdx = parseInt(document.getElementById('editStudentSection')?.value, 10);
         const newNotes = (document.getElementById('editStudentNotes')?.value || '').trim();
         const newTest = (document.getElementById('editStudentTest')?.value || '').trim() || '–';
         const newExam = (document.getElementById('editStudentExam')?.value || '').trim() || '–';
+        const newPhoneCall = (document.getElementById('editCallParents')?.value || '').trim();
 
         const studentObj = {
             name: newName,
@@ -732,24 +798,17 @@ function openEditStudentModal(sectionIndex, studentIndex) {
             emoji: newEmoji,
             notes: newNotes,
             test: newTest,
-            exam: newExam
+            exam: newExam,
+            phoneCall: newPhoneCall // ✅ keep it consistent
         };
 
-        // If section changed, remove from old and push to new
         if (newSectionIdx !== editStudentSectionIndex) {
-            // remove from old
             const oldSection = data.sections[editStudentSectionIndex];
-            if (!oldSection) {
-                // defensive
-                return alert('Invalid section selection');
-            }
+            if (!oldSection) return alert('Invalid section selection');
             oldSection.students.splice(editStudentIndex, 1);
-            // push to new
             data.sections[newSectionIdx].students.push(studentObj);
-            // update activeSectionIndex to the target so UI shows updated list
             activeSectionIndex = newSectionIdx;
         } else {
-            // same section, replace
             data.sections[editStudentSectionIndex].students[editStudentIndex] = studentObj;
         }
 
@@ -763,7 +822,7 @@ function openEditStudentModal(sectionIndex, studentIndex) {
     document.body.style.overflow = 'hidden';
 }
 
-// small helper to escape HTML in values to avoid breaking attributes
+// Escape HTML helper
 function escapeHtml(unsafe) {
     if (unsafe === undefined || unsafe === null) return '';
     return String(unsafe)
@@ -773,6 +832,17 @@ function escapeHtml(unsafe) {
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#039;');
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // ===============================
 // ====== Confirm Modal =========
