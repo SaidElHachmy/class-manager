@@ -45,8 +45,8 @@ Each student profile includes:
 - Gender emoji (👦/👧)  
 - Phone number  
 - Notes  
-- Test score (0–20)  
-- Exam score (0–20)
+- Test score (e.g., 5/10, 10/20, 15/30…)  
+- Exam score (e.g., 20/40, 25/50…)  
 
 ### 🔍 Student Profile View
 - Beautiful card interface with all student details visible
