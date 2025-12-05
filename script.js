@@ -609,20 +609,28 @@ function openStudentModal(student) {
             <hr style="margin:15px 0;border:1px dashed #0078ff;">
             
             
-            
-<p>
+  <p>
   <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span> 
-  ${student.phoneCall || "–"} 
+  ${student.phoneCall ? student.phoneCall : "–"}
+
+  <!-- Only show the call button if a number exists -->
   ${student.phoneCall ? `
     <button 
-      style="margin-left:8px;padding:4px 8px;font-size:16px;border:2px solid #0078ff;border-radius:6px;background:white;cursor:pointer;"
+      style="
+        margin-left:8px;
+        padding:4px 8px;
+        font-size:16px;
+        border:2px solid #0078ff;
+        border-radius:6px;
+        background:white;
+        cursor:pointer;
+      "
       onclick="window.location.href='tel:${student.phoneCall}'"
     >
       📞
     </button>
   ` : ''}
 </p>
-            
             
             
             
