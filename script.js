@@ -611,7 +611,7 @@ function openStudentModal(student) {
             
             
 <p>
-  <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span> 
+  <span style="color:green"><strong>${t("callParents")}:</strong></span> 
   ${student.phoneCall || "–"}
 
   <!-- Only show the call button if a number exists -->
