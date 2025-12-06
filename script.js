@@ -593,59 +593,57 @@ addStudentBtn.onclick = () => {
 
 function openStudentModal(student) {
     if (!studentCardContent || !studentModalOverlay) return;
+
     const sectionName = data.sections[activeSectionIndex]?.name || '';
+
+    // Build the phone UI separately BEFORE inserting into innerHTML
+    let phoneUI = `
+        <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span> 
+        ${student.phoneCall || "–"}
+    `;
+
+    if (student.phoneCall && student.phoneCall.trim() !== "") {
+        phoneUI += `
+            <button 
+                style="
+                    margin-left:8px;
+                    padding:4px 8px;
+                    font-size:16px;
+                    border:2px solid #0078ff;
+                    border-radius:6px;
+                    background:white;
+                    cursor:pointer;
+                "
+                onclick="window.location.href='tel:${student.phoneCall}'"
+            >
+                📞
+            </button>
+        `;
+    }
+
     studentCardContent.innerHTML = `
         <div style="border:3px solid #0078ff;padding:15px;border-radius:12px;background:rgba(255,255,255,0.55);backdrop-filter: blur(3px);">
             <div style="display:flex;gap:15px;">
                 <div style="font-size:50px;border:2px solid #0078ff;width:80px;height:80px;display:flex;align-items:center;justify-content:center;border-radius:10px;filter: drop-shadow(0 0 5px #0078ff);">
-                    ${student.emoji || '👦🏻🏻'}
+                    ${student.emoji || '👦🏻'}
                 </div>
                 <div style="flex:1;">
                     <p><span style="color:#0078ff"><strong>${t("studentNameCard")}:</strong></span> ${student.name || "—"}</p>
                     <p><span style="color:#0078ff"><strong>${t("id")}:</strong></span> ${student.id || "—"}</p>
                 </div>
-                
             </div>
+
             <hr style="margin:15px 0;border:1px dashed #0078ff;">
-            
-            
-            
-<p>
-  <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span> 
-  ${student.phoneCall || "–"}
 
-  <!-- Only show the call button if a number exists -->
-  <button 
-    style="
-      margin-left:8px;
-      padding:4px 8px;
-      font-size:16px;
-      border:2px solid #0078ff;
-      border-radius:6px;
-      background:white;
-      cursor:${student.phoneCall ? 'pointer' : 'not-allowed'};
-      opacity:${student.phoneCall ? '1' : '0.4'};
-      display:${student.phoneCall ? 'inline-block' : 'none'};
-    "
-    onclick="${student.phoneCall ? `window.location.href='tel:${student.phoneCall}'` : ''}"
-    ${student.phoneCall ? '' : 'disabled'}
-  >
-    📞
-  </button>
-</p>
+            <p>${phoneUI}</p>
 
-
-
-
-            
-            
-            
             <p><span style="color:#0078ff"><strong>${t("section")}:</strong></span> ${sectionName || "—"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentNotes")}:</strong></span> ${student.notes || "—"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentTestCard")}:</strong></span> ${student.test || "–"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentExamCard")}:</strong></span> ${student.exam || "–"}</p>
         </div>
     `;
+
     studentModalOverlay.style.display = "flex";
     document.body.style.overflow = "hidden";
 }
@@ -654,8 +652,6 @@ if (closeStudentModal) closeStudentModal.onclick = () => {
     studentModalOverlay.style.display = 'none';
     document.body.style.overflow = '';
 };
-
-
 
 
 
