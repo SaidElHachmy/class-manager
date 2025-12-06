@@ -596,13 +596,16 @@ function openStudentModal(student) {
 
     const sectionName = data.sections[activeSectionIndex]?.name || '';
 
-    // Build the phone UI separately BEFORE inserting into innerHTML
+    // Normalize phone number:
+    const phone = student.phoneCall && student.phoneCall.trim() !== "–" ? student.phoneCall.trim() : "";
+
+    // Build the phone UI
     let phoneUI = `
-        <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span> 
-        ${student.phoneCall || "–"}
+        <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span>
+        ${phone || "—"}
     `;
 
-    if (student.phoneCall && student.phoneCall.trim() !== "") {
+    if (phone !== "") {
         phoneUI += `
             <button 
                 style="
@@ -614,7 +617,7 @@ function openStudentModal(student) {
                     background:white;
                     cursor:pointer;
                 "
-                onclick="window.location.href='tel:${student.phoneCall}'"
+                onclick="window.location.href='tel:${phone}'"
             >
                 📞
             </button>
@@ -638,7 +641,7 @@ function openStudentModal(student) {
             <p>${phoneUI}</p>
 
             <p><span style="color:#0078ff"><strong>${t("section")}:</strong></span> ${sectionName || "—"}</p>
-            <p><span style="color:#0078ff"><strong>${t("studentNotes")}:</strong></span> ${student.notes || "—"}</p>
+            <p><span style="color:#0078ff"><strong>${t("studentNotes")}:</strong></span> ${student.notes || "﹏﹏﹏﹏﹏﹏﹏"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentTestCard")}:</strong></span> ${student.test || "–"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentExamCard")}:</strong></span> ${student.exam || "–"}</p>
         </div>
@@ -652,7 +655,6 @@ if (closeStudentModal) closeStudentModal.onclick = () => {
     studentModalOverlay.style.display = 'none';
     document.body.style.overflow = '';
 };
-
 
 
 
