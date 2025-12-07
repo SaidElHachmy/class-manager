@@ -23,8 +23,8 @@ const translations = {
         
         studentNameCard: "Name",
         gender:"Gender",
-        studentTestCard: "Latest Test Score",
-        studentExamCard: "Latest Exam Score",
+        studentTestCard: "Recent Test Result",
+        studentExamCard: "Recent Exam Result",
         studentTest: "Test score (e.g., 17/20, 26/30, 37/40)",
         studentExam: "Exam score (e.g., 17/20, 26/30, 37/40)",
         studentNotes: "Notes",
@@ -59,8 +59,8 @@ const translations = {
         
         studentNameCard: "Nom",
         gender:"Genre",
-        studentTestCard: "Dernière note de test",
-        studentExamCard: "Dernière note d’examen",
+        studentTestCard: "Résultat de test récent",
+        studentExamCard: "Résultat d’examen récent",
         studentTest: "Score du test (par ex., 17/20, 26/30, 37/40)",
         
         studentExam: "Score de l'examen (par ex., 17/20, 26/30, 37/40)",
@@ -99,9 +99,13 @@ const translations = {
         id: "المعرف",
         studentNameCard: "الاسم",
         gender:"الجنس",
-        studentTestCard: "أحدث نتيجة اختبار",
+        studentTestCard: "نتيجة اختبار حديث",
         
-        studentExamCard:"أحدث نتيجة امتحان",
+
+        
+        studentExamCard: "نتيجة امتحان حديث",
+        
+        
         
         
 
@@ -593,8 +597,8 @@ const messageTranslations = {
     
     name: "الاسم:",
     section: "القسم:",
-    test: "نتيجة الاختبار:",
-    exam: "نتيجة الامتحان:",
+    test: "نتيجة اختبار حديث:",
+    exam: "نتيجة امتحان حديث:",
     notes: "ملاحظات:",
     question: "نتمنى منكم الاطلاع على هذه المعلومات، وفي حال لديكم أي ملاحظات أو استفسارات، يسعدنا تواصلكم دائماً",
     thanks: "شكراً لتعاونكم المستمر وتمنياتنا لأبنائنا بالتوفيق والنجاح الدائم"
@@ -604,8 +608,8 @@ const messageTranslations = {
     intro: "Je souhaite vous contacter au sujet de votre enfant :",
     name: "Nom :",
     section: "Section :",
-    test: "Note du test :",
-    exam: "Note de l’examen :",
+    test: "Résultat de test récent :",
+    exam: "Résultat d’examen récent :",
     notes: "Notes :",
     question: "Nous vous invitons à prendre connaissance de ces informations et restons à votre disposition pour toute question ou remarque",
     thanks: "Merci pour votre collaboration continue et nos meilleurs vœux de réussite à nos élèves"
@@ -615,8 +619,8 @@ const messageTranslations = {
     intro: "I would like to contact you regarding your student:",
     name: "Name:",
     section: "Section:",
-    test: "Test Score:",
-    exam: "Exam Score:",
+    test: "Recent Test Result:",
+    exam: "Recent Exam Result:",
     notes: "Notes:",
     question: "Please review the information, and feel free to reach out if you have any questions or remarks",
     thanks: "Thank you for your continued cooperation and best wishes for our students’ success"
