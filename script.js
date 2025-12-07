@@ -23,8 +23,8 @@ const translations = {
         
         studentNameCard: "Name",
         gender:"Gender",
-        studentTestCard: "Test score",
-        studentExamCard: "Exam score",
+        studentTestCard: "Latest Test Score",
+        studentExamCard: "Latest Exam Score",
         studentTest: "Test score (e.g., 17/20, 26/30, 37/40)",
         studentExam: "Exam score (e.g., 17/20, 26/30, 37/40)",
         studentNotes: "Notes",
@@ -59,8 +59,8 @@ const translations = {
         
         studentNameCard: "Nom",
         gender:"Genre",
-        studentTestCard: "Note du test",
-        studentExamCard: "Note de l'examen",
+        studentTestCard: "Dernière note de test",
+        studentExamCard: "Dernière note d’examen",
         studentTest: "Score du test (par ex., 17/20, 26/30, 37/40)",
         
         studentExam: "Score de l'examen (par ex., 17/20, 26/30, 37/40)",
@@ -99,8 +99,12 @@ const translations = {
         id: "المعرف",
         studentNameCard: "الاسم",
         gender:"الجنس",
-        studentTestCard: "درجة الاختبار",
-        studentExamCard: "درجة الامتحان",
+        studentTestCard: "أحدث نتيجة اختبار",
+        
+        studentExamCard:"أحدث نتيجة امتحان",
+        
+        
+
         studentTest: "درجة الاختبار (مثال: 17/20، 26/30، 37/40)",
         studentExam: "درجة الامتحان (مثال: 17/20، 26/30، 37/40)",
        
