@@ -580,6 +580,84 @@ addStudentBtn.onclick = () => {
 };
 
 
+const messageTranslations = {
+  ar: {
+    hello: "السلام عليكم 👋",
+    intro: "أود التواصل معكم بخصوص الطالب/الطالبة:",
+    name: "👤 الاسم:",
+    section: "🏫 القسم:",
+    
+    test: "🧪 نتيجة الاختبار:",
+    exam: "📘 نتيجة الامتحان:",
+    notes: "📝 ملاحظات:",
+    question: "هل يمكنكم التأكيد أن كل شيء على ما يرام؟",
+    thanks: "شكراً لكم! 🌟"
+  },
+  fr: {
+    hello: "Bonjour 👋",
+    intro: "Je souhaite vous contacter au sujet de l’élève :",
+    name: "👤 Nom :",
+    section: "🏫 Section :",
+    
+    test: "🧪 Note du test :",
+    exam: "📘 Note de l’examen :",
+    notes: "📝 Notes :",
+    question: "Pouvez-vous confirmer que tout va bien ?",
+    thanks: "Merci beaucoup ! 🌟"
+  },
+  en: {
+    hello: "Hello 👋",
+    intro: "I would like to contact you regarding the student:",
+    name: "👤 Name:",
+    section: "🏫 Section:",
+    
+    test: "🧪 Test Score:",
+    exam: "📘 Exam Score:",
+    notes: "📝 Notes:",
+    question: "Could you please confirm everything is okay?",
+    thanks: "Thank you! 🌟"
+  }
+};
+
+
+function contactParentsWhatsApp(student) {
+    if (!student || !student.phoneCall) return;
+
+    const phone = student.phoneCall.trim();
+    const lang = currentLang || "en"; // use your language state
+
+    const tr = messageTranslations[lang];
+
+    const sectionName = data.sections[activeSectionIndex]?.name || "—";
+
+    const message = `
+${tr.hello}
+
+${tr.intro}
+${tr.name} ${student.name || "—"}
+${tr.section} ${sectionName}
+${tr.test} ${student.test || "—"}
+${tr.exam} ${student.exam || "—"}
+${tr.notes} ${student.notes || "—"}
+
+${tr.question}
+
+${tr.thanks}
+    `.trim();
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -596,33 +674,72 @@ function openStudentModal(student) {
 
     const sectionName = data.sections[activeSectionIndex]?.name || '';
 
-    // Normalize phone number:
-    const phone = student.phoneCall && student.phoneCall.trim() !== "–" ? student.phoneCall.trim() : "";
+// Normalize phone number:
+const phone = student.phoneCall && student.phoneCall.trim() !== "–" ? student.phoneCall.trim() : "";
 
-    // Build the phone UI
-    let phoneUI = `
-        <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span>
-        ${phone || "—"}
+// Build the phone UI
+let phoneUI = `
+    <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span>
+    ${phone || "—"}
+`;
+
+if (phone !== "") {
+    // 📞 Call Button
+    phoneUI += `
+        <button
+            style="
+                margin-left:2px;
+                padding:3px 9px;
+                font-size:16px;
+                border:2px solid #0078ff;
+                color:#0078ff;
+                border-radius:6px;
+                background:white;
+                cursor:pointer;
+                filter: drop-shadow(0 0 5px #0078ff);
+        
+            "
+            onclick="window.location.href='tel:${phone}'"
+        >
+            📞
+        </button>
     `;
 
-    if (phone !== "") {
-        phoneUI += `
-            <button 
-                style="
-                    margin-left:8px;
-                    padding:4px 8px;
-                    font-size:16px;
-                    border:2px solid #0078ff;
-                    border-radius:6px;
-                    background:white;
-                    cursor:pointer;
-                "
-                onclick="window.location.href='tel:${phone}'"
-            >
-                📞
-            </button>
-        `;
-    }
+    // 📱 WhatsApp Button
+    phoneUI += `
+        <button
+            style="
+                margin-left:2px;
+                padding:3px 9px;
+                font-size:16px;
+                
+                border:2px solid #25D366;
+                border-radius:6px;
+                color:#25D366;
+                background:white;
+                cursor:pointer;
+                filter: drop-shadow(0 0 5px #25D366);
+        
+            "
+            onclick='contactParentsWhatsApp(${JSON.stringify(student)})'
+        >
+        
+        💬
+        
+        </button>
+        
+        
+        
+        
+
+
+
+    `;
+}
+
+    
+    
+    
 
     studentCardContent.innerHTML = `
         <div style="border:3px solid #0078ff;padding:15px;border-radius:12px;background:rgba(255,255,255,0.55);backdrop-filter: blur(3px);">
