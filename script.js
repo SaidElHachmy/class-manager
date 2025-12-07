@@ -582,40 +582,40 @@ addStudentBtn.onclick = () => {
 
 const messageTranslations = {
   ar: {
-    hello: "السلام عليكم 👋",
-    intro: "أود التواصل معكم بخصوص الطالب/الطالبة:",
-    name: "👤 الاسم:",
-    section: "🏫 القسم:",
+    hello: "السلام عليكم، أرجو أن تكونوا بخير",
     
-    test: "🧪 نتيجة الاختبار:",
-    exam: "📘 نتيجة الامتحان:",
-    notes: "📝 ملاحظات:",
-    question: "هل يمكنكم التأكيد أن كل شيء على ما يرام؟",
-    thanks: "شكراً لكم! 🌟"
+    
+    intro: "يسرّني التواصل معكم بخصوص الطالب/الطالبة:",
+    
+    name: "الاسم:",
+    section: "القسم:",
+    test: "نتيجة الاختبار:",
+    exam: "نتيجة الامتحان:",
+    notes: "ملاحظات:",
+    question: "نتمنى منكم الاطلاع على هذه المعلومات، وفي حال لديكم أي ملاحظات أو استفسارات، يسعدنا تواصلكم دائماً",
+    thanks: "شكراً لتعاونكم المستمر وتمنياتنا لأبنائنا بالتوفيق والنجاح الدائم"
   },
   fr: {
-    hello: "Bonjour 👋",
-    intro: "Je souhaite vous contacter au sujet de l’élève :",
-    name: "👤 Nom :",
-    section: "🏫 Section :",
-    
-    test: "🧪 Note du test :",
-    exam: "📘 Note de l’examen :",
-    notes: "📝 Notes :",
-    question: "Pouvez-vous confirmer que tout va bien ?",
-    thanks: "Merci beaucoup ! 🌟"
+    hello: "Bonjour, j’espère que vous allez bien",
+    intro: "Je souhaite vous contacter au sujet de votre enfant :",
+    name: "Nom :",
+    section: "Section :",
+    test: "Note du test :",
+    exam: "Note de l’examen :",
+    notes: "Notes :",
+    question: "Nous vous invitons à prendre connaissance de ces informations et restons à votre disposition pour toute question ou remarque",
+    thanks: "Merci pour votre collaboration continue et nos meilleurs vœux de réussite à nos élèves"
   },
   en: {
-    hello: "Hello 👋",
-    intro: "I would like to contact you regarding the student:",
-    name: "👤 Name:",
-    section: "🏫 Section:",
-    
-    test: "🧪 Test Score:",
-    exam: "📘 Exam Score:",
-    notes: "📝 Notes:",
-    question: "Could you please confirm everything is okay?",
-    thanks: "Thank you! 🌟"
+    hello: "Hello, hope you are doing well",
+    intro: "I would like to contact you regarding your student:",
+    name: "Name:",
+    section: "Section:",
+    test: "Test Score:",
+    exam: "Exam Score:",
+    notes: "Notes:",
+    question: "Please review the information, and feel free to reach out if you have any questions or remarks",
+    thanks: "Thank you for your continued cooperation and best wishes for our students’ success"
   }
 };
 
@@ -635,7 +635,7 @@ ${tr.hello}
 
 ${tr.intro}
 ${tr.name} ${student.name || "—"}
-${tr.section} ${sectionName}
+${tr.section} ${sectionName || "—"}
 ${tr.test} ${student.test || "—"}
 ${tr.exam} ${student.exam || "—"}
 ${tr.notes} ${student.notes || "—"}
@@ -643,10 +643,11 @@ ${tr.notes} ${student.notes || "—"}
 ${tr.question}
 
 ${tr.thanks}
-    `.trim();
+`.trim();
 
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+window.open(url, "_blank");
+
 }
 
 
