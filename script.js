@@ -322,13 +322,13 @@ function renderSections() {
     data.sections.forEach((section, index) => {
         
         function updateStudentCount(el, students) {
-    const boys = students.filter(s => s.emoji && (s.emoji.includes('👦') || s.emoji.includes('🧑🏻‍🦱'))).length;
+    const boys = students.filter(s => s.emoji && (s.emoji.includes('👦') || s.emoji.includes('🧑'))).length;
     const girls = students.filter(s => s.emoji && (s.emoji.includes('👧') || s.emoji.includes('👩'))).length;
 
     if (boys === 0 && girls === 0) {
         el.textContent = "(🧑/👧): 0";
         el.style.backgroundColor="white";
-        el.style.minWidth="95px";
+        el.style.minWidth="115px";
         el.style.padding = "4px 8px";
     el.style.borderRadius = "8px";
     el.style.border = "2px solid red";
@@ -340,7 +340,7 @@ function renderSections() {
     } else {
         el.textContent = `(🧑:${boys} | 👧:${girls})`;
         el.style.backgroundColor="white";
-        el.style.minWidth="95px";
+        el.style.minWidth="115px";
         el.style.padding = "4px 8px";
     el.style.borderRadius = "8px";
     el.style.border = "2px solid green";
@@ -443,7 +443,7 @@ countDiv.id = `count-${index}`;
 
 
     countDiv.style.padding = "4px 8px";
-    countDiv.style.minWidth="95px";
+    countDiv.style.minWidth="115px";
     countDiv.style.borderRadius = "8px";
     
     countDiv.style.fontSize = "12px";
@@ -543,7 +543,7 @@ function updateStudentCount(el, students = []) {
     if (boys === 0 && girls === 0) {
         el.textContent = "(🧑/👧): 0";
         el.style.backgroundColor="white";
-        el.style.minWidth="95px";
+        el.style.minWidth="115px";
         el.style.padding = "4px 8px";
     el.style.borderRadius = "8px";
     el.style.border = "2px solid red";
@@ -554,7 +554,7 @@ function updateStudentCount(el, students = []) {
     } else {
         el.textContent = `(🧑:${boys} | 👧:${girls})`;
                 el.style.backgroundColor="white";
-        el.style.minWidth="95px";
+        el.style.minWidth="115px";
         el.style.padding = "4px 8px";
     el.style.borderRadius = "8px";
     el.style.border = "2px solid green";
@@ -565,7 +565,7 @@ function updateStudentCount(el, students = []) {
     }
     // small styling to keep it tidy
         //el.style.backgroundColor="white";
-        el.style.minWidth="95px";
+        el.style.minWidth="115px";
         el.style.padding = "4px 8px";
     el.style.borderRadius = "8px";
 
