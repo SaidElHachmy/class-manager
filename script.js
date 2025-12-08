@@ -271,7 +271,7 @@ function refreshEditButtonsText() {
 // ====== Render Functions ======
 // ===============================
 function updateTexts() {
-    siteTitle.textContent = `👨🏻‍🏫 ${t("title")}`;
+    siteTitle.textContent = `👨‍🏫 ${t("title")}`;
     contactLink.textContent = t("contact");
     addSectionBtn.textContent = t("addSection");
     sectionInput.placeholder = t("sectionPlaceholder");
@@ -320,6 +320,43 @@ function showConfirm(message, callback) {
 function renderSections() {
     sectionsList.innerHTML = "";
     data.sections.forEach((section, index) => {
+        
+        function updateStudentCount(el, students) {
+    const boys = students.filter(s => s.emoji && (s.emoji.includes('👦') || s.emoji.includes('🧑🏻‍🦱'))).length;
+    const girls = students.filter(s => s.emoji && (s.emoji.includes('👧') || s.emoji.includes('👩'))).length;
+
+    if (boys === 0 && girls === 0) {
+        el.textContent = "(🧑/👧): 0";
+        el.style.backgroundColor="white";
+        el.style.minWidth="95px";
+        el.style.padding = "4px 8px";
+    el.style.borderRadius = "8px";
+    el.style.border = "2px solid red";
+    el.style.fontSize = "12px";
+    
+    el.style.color = "red";
+        
+        
+    } else {
+        el.textContent = `(🧑:${boys} | 👧:${girls})`;
+        el.style.backgroundColor="white";
+        el.style.minWidth="95px";
+        el.style.padding = "4px 8px";
+    el.style.borderRadius = "8px";
+    el.style.border = "2px solid green";
+    el.style.fontSize = "12px";
+    
+    el.style.color = "green";
+    }
+}
+        
+        
+        
+        
+        
+        
+        
+        
         
         const sectionInsideNameDiv = document.createElement('div');
         sectionInsideNameDiv.style.backgroundColor="none"
@@ -383,7 +420,7 @@ function renderSections() {
         delBtn.textContent = t("cancel");
         delBtn.onclick = (e) => {
             e.stopPropagation();
-            showConfirm(t("confirmDeleteSection", { name: section.name }), () => {
+            showConfirm(t("confirmDeleteSection", { name: truncateText(section.name, 58)}), () => {
                 data.sections.splice(index, 1);
                 activeSectionIndex = null;
                 saveAll();
@@ -392,20 +429,82 @@ function renderSections() {
         };
 
 
-         sectionInsideNameDiv.appendChild(document.createElement('span')).textContent = section.name;
+        // sectionInsideNameDiv.appendChild(document.createElement('span')).textContent = section.name;
         
-        sectionInsideDiv.appendChild(editBtn);
-        sectionInsideDiv.appendChild(delBtn);
+        sectionInsideNameDiv.appendChild(document.createElement('span')).textContent = truncateText(section.name, 48);
         
+        
+        
+// Student Count Box (placed before edit/delete buttons)
+const countDiv = document.createElement('button');
+countDiv.id = `count-${index}`;
+
+
+
+
+    countDiv.style.padding = "4px 8px";
+    countDiv.style.minWidth="95px";
+    countDiv.style.borderRadius = "8px";
+    
+    countDiv.style.fontSize = "12px";
+    countDiv.style.fontWeight="bold";
+    
+
+
+// initial render of the count
+updateStudentCount(countDiv, section.students || []);
+
+// place count at start of controls
+//sectionInsideDiv.prepend(countDiv);
+
+
+sectionInsideDiv.appendChild(countDiv);
+sectionInsideDiv.appendChild(editBtn);
+
+sectionInsideDiv.appendChild(delBtn);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
         div.appendChild(sectionInsideNameDiv);
         div.appendChild(sectionInsideDiv);
 
         div.onclick = () => {
             activeSectionIndex = index;
             renderStudents();
-            activeSectionName.textContent = section.name;
+            //activeSectionName.textContent = section.name;
+            
+            activeSectionName.textContent = truncateText(section.name, 100);
+        
         };
 
+        
+        
+        
+        
+        
+        
+        const countEl = document.getElementById(`count-${activeSectionIndex}`);
+if (countEl) {
+    const section = data.sections[activeSectionIndex];
+    updateStudentCount(countEl, section.students);
+}
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         sectionsList.prepend(div);
     });
@@ -427,9 +526,52 @@ addSectionBtn.onclick = () => {
 // ===============================
 // ====== Student Functions ======
 // ===============================
-function truncateText(text, maxLength = 15) {
+function truncateText(text, maxLength = 10) {
     if (!text) return '';
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+}
+
+// ----------------------
+// Update Student Count UI
+// ----------------------
+function updateStudentCount(el, students = []) {
+    if (!el) return;
+    // count boys and girls by emoji (robust check)
+    const boys = students.filter(s => typeof s.emoji === 'string' && /👦|🧑|👨|🧑🏻|🧑|👨🏻/.test(s.emoji)).length;
+    const girls = students.filter(s => typeof s.emoji === 'string' && /👧|👩|🧑♀|👧|👩🏻/.test(s.emoji)).length;
+
+    if (boys === 0 && girls === 0) {
+        el.textContent = "(🧑/👧): 0";
+        el.style.backgroundColor="white";
+        el.style.minWidth="95px";
+        el.style.padding = "4px 8px";
+    el.style.borderRadius = "8px";
+    el.style.border = "2px solid red";
+    el.style.fontSize = "12px";
+    
+    el.style.color = "red";
+        
+    } else {
+        el.textContent = `(🧑:${boys} | 👧:${girls})`;
+                el.style.backgroundColor="white";
+        el.style.minWidth="95px";
+        el.style.padding = "4px 8px";
+    el.style.borderRadius = "8px";
+    el.style.border = "2px solid green";
+    el.style.fontSize = "12px";
+    
+    el.style.color = "green";
+        
+    }
+    // small styling to keep it tidy
+        //el.style.backgroundColor="white";
+        el.style.minWidth="95px";
+        el.style.padding = "4px 8px";
+    el.style.borderRadius = "8px";
+
+    el.style.fontSize = "12px";
+    
+
 }
 
 
@@ -508,12 +650,12 @@ function renderStudents() {
         const emojiDiv = document.createElement('div');
         emojiDiv.id = "emojiBorder";
         emojiDiv.style.cssText = "font-size:20px;border:2px solid #0078ff;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:5px;";
-        emojiDiv.textContent = student.emoji || '👦🏻';
+        emojiDiv.textContent = student.emoji || '🧑';
         emojiBox.appendChild(emojiDiv);
 
         const nameDiv = document.createElement('div');
         nameDiv.id="nameDiv";
-        nameDiv.textContent = truncateText(student.name, 15); // truncate displayed name
+        nameDiv.textContent = truncateText(student.name, 8); // truncate displayed name
         const btnDiv = document.createElement('div');
         btnDiv.id="btnDiv";
 
@@ -537,11 +679,23 @@ function renderStudents() {
         delBtn.style.margin="5px 4px";
         delBtn.className = "btn-del";
         delBtn.textContent = t("cancel");
+
+        
         delBtn.onclick = () => showConfirm(t("confirmDeleteStudent", { name: student.name }), () => {
-            section.students.splice(index, 1);
-            saveAll();
-            renderStudents();
-        });
+    section.students.splice(index, 1);
+    saveAll();
+
+    // update count for this section
+    const cntEl = document.getElementById(`count-${activeSectionIndex}`);
+    if (cntEl) updateStudentCount(cntEl, section.students);
+
+    renderStudents();
+});
+        
+        
+        
+        
+        
 
         
 
@@ -570,23 +724,38 @@ function renderStudents() {
 }
 
 addStudentBtn.onclick = () => {
-    if (activeSectionIndex === null) { alert(t("selectSectionFirst")); return; }
+    if (activeSectionIndex === null) { 
+        alert(t("selectSectionFirst")); 
+        return; 
+    }
+
     const student = {
         name: studentNameInput.value.trim(),
         id: studentIDInput.value.trim() || "00001",
-        phoneCall:callParents.value.trim() || "–",
+        phoneCall: callParents.value.trim() || "–",
         emoji: studentEmoji.value,
         notes: studentNotes.value.trim(),
         test: studentTest.value.trim() || "–",
         exam: studentExam.value.trim() || "–"
     };
+
     if (!student.name) return;
+
+    // push the student once
     data.sections[activeSectionIndex].students.push(student);
+
+    // clear the input fields
     studentNameInput.value = studentIDInput.value = callParents.value = studentNotes.value = studentTest.value = studentExam.value = "";
+
     saveAll();
+
+    // update the count for this section immediately
+    const cntEl = document.getElementById(`count-${activeSectionIndex}`);
+    if (cntEl) updateStudentCount(cntEl, data.sections[activeSectionIndex].students);
+
+    // render the students only once
     renderStudents();
 };
-
 
 const messageTranslations = {
   ar: {
@@ -754,10 +923,13 @@ if (phone !== "") {
         <div style="border:3px solid #0078ff;padding:15px;border-radius:12px;background:rgba(255,255,255,0.55);backdrop-filter: blur(3px);">
             <div style="display:flex;gap:15px;">
                 <div style="font-size:50px;border:2px solid #0078ff;width:80px;height:80px;display:flex;align-items:center;justify-content:center;border-radius:10px;filter: drop-shadow(0 0 5px #0078ff);">
-                    ${student.emoji || '👦🏻'}
+                    ${student.emoji || '🧑'}
                 </div>
                 <div style="flex:1;">
-                    <p><span style="color:#0078ff"><strong>${t("studentNameCard")}:</strong></span> ${student.name || "—"}</p>
+<p>
+  <span style="color:#0078ff"><strong>${t("studentNameCard")}:</strong></span> 
+  ${truncateText(student.name, 18) || "—"}
+</p>
                     <p><span style="color:#0078ff"><strong>${t("id")}:</strong></span> ${student.id || "—"}</p>
                 </div>
             </div>
@@ -766,8 +938,18 @@ if (phone !== "") {
 
             <p>${phoneUI}</p>
 
-            <p><span style="color:#0078ff"><strong>${t("section")}:</strong></span> ${sectionName || "—"}</p>
-            <p><span style="color:#0078ff"><strong>${t("studentNotes")}:</strong></span> ${student.notes || "﹏﹏﹏﹏﹏﹏﹏"}</p>
+<p>
+  <span style="color:#0078ff"><strong>${t("section")}:</strong></span> 
+  ${truncateText(sectionName, 48) || "—"}
+</p>
+            
+            
+            
+            
+<p>
+  <span style="color:#0078ff"><strong>${t("studentNotes")}:</strong></span> 
+  ${truncateText(student.notes, 350) || "﹏﹏﹏﹏﹏﹏﹏"}
+</p>
             <p><span style="color:#0078ff"><strong>${t("studentTestCard")}:</strong></span> ${student.test || "–"}</p>
             <p><span style="color:#0078ff"><strong>${t("studentExamCard")}:</strong></span> ${student.exam || "–"}</p>
         </div>
@@ -830,10 +1012,6 @@ function openEditSectionModal(sectionIndex) {
 
 
 
-
-// ===============================
-// ====== Edit Student Modal ======
-// ===============================
 // ===============================
 // ====== Edit Student Modal ======
 // ===============================
@@ -852,7 +1030,7 @@ function openEditStudentModal(sectionIndex, studentIndex) {
         <div style="border:3px solid #0078ff;padding:12px;border-radius:12px;background:rgba(255,255,255,0.55);backdrop-filter: blur(3px);">
             <div style="display:flex;gap:12px;align-items:center;">
                 <div id="editEmojiPreview" style="font-size:40px;border:2px solid #0078ff;width:70px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:10px;filter: drop-shadow(0 0 5px #0078ff);">
-                    ${escapeHtml(student.emoji || '👦🏻')}
+                    ${escapeHtml(student.emoji || '🧑')}
                 </div>
                 <div style="flex:1;">
                     <label for="editStudentName" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentName')}</label>
@@ -871,8 +1049,8 @@ function openEditStudentModal(sectionIndex, studentIndex) {
 
                 <label for="editStudentEmoji" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('gender')}</label>
                 <select id="editStudentEmoji" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;">
-                    <option value="👦🏻" ${student.emoji === '👦🏻' ? 'selected' : ''}>👦🏻</option>
-                    <option value="👧🏻" ${student.emoji === '👧🏻' ? 'selected' : ''}>👧🏻</option>
+                    <option value="🧑" ${student.emoji === '🧑' ? 'selected' : ''}>🧑</option>
+                    <option value="👧" ${student.emoji === '👧' ? 'selected' : ''}>👧</option>
                 </select>
             </div>
 
@@ -920,7 +1098,7 @@ function openEditStudentModal(sectionIndex, studentIndex) {
         if (!newName) return alert(t('studentName'));
 
         const newID = (document.getElementById('editStudentID')?.value || '').trim() || '00001';
-        const newEmoji = (document.getElementById('editStudentEmoji')?.value || '👦🏻').trim();
+        const newEmoji = (document.getElementById('editStudentEmoji')?.value || '🧑').trim();
         const newSectionIdx = parseInt(document.getElementById('editStudentSection')?.value, 10);
         const newNotes = (document.getElementById('editStudentNotes')?.value || '').trim();
         const newTest = (document.getElementById('editStudentTest')?.value || '').trim() || '–';
@@ -936,22 +1114,47 @@ function openEditStudentModal(sectionIndex, studentIndex) {
             exam: newExam,
             phoneCall: newPhoneCall // ✅ keep it consistent
         };
+        
+        
 
-        if (newSectionIdx !== editStudentSectionIndex) {
-            const oldSection = data.sections[editStudentSectionIndex];
-            if (!oldSection) return alert('Invalid section selection');
-            oldSection.students.splice(editStudentIndex, 1);
-            data.sections[newSectionIdx].students.push(studentObj);
-            activeSectionIndex = newSectionIdx;
-        } else {
-            data.sections[editStudentSectionIndex].students[editStudentIndex] = studentObj;
-        }
+        
+        let oldIdx = editStudentSectionIndex;
+let newIdx = newSectionIdx;
+
+if (newIdx !== oldIdx) {
+    const oldSection = data.sections[oldIdx];
+    if (!oldSection) return alert('Invalid section selection');
+    oldSection.students.splice(editStudentIndex, 1);
+    data.sections[newIdx].students.push(studentObj);
+    activeSectionIndex = newIdx;
+} else {
+    data.sections[oldIdx].students[editStudentIndex] = studentObj;
+}
+
+// update counts for both old and new sections
+const oldCountEl = document.getElementById(`count-${oldIdx}`);
+if (oldCountEl) updateStudentCount(oldCountEl, data.sections[oldIdx].students);
+
+const newCountEl = document.getElementById(`count-${newIdx}`);
+if (newCountEl) updateStudentCount(newCountEl, data.sections[newIdx].students);
+        
+        
+        
+        
+        
+        
+        
 
         saveAll();
         updateTexts();
         renderStudents();
         closeEditModal();
     };
+    
+    
+    
+    
+    
 
     editModalOverlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
