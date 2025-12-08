@@ -78,6 +78,34 @@ Each student profile includes:
 
 ---
 
+## 🆕 New Features
+
+We’ve added **important updates** to make classroom management faster and clearer:
+
+1️⃣ **Student Count by Gender in Each Section**  
+- See at a glance how many **male and female students** are in each section.  
+- When a section is empty: `(🧑/👧): 0`  
+- When there are students: `(🧑: 2 | 👧: 3)`  
+
+2️⃣ **Color-Coded Section Status**  
+- **Red** box if the section is empty  
+- **Green** box if the section has one or more students  
+
+These features help teachers:
+
+- Quickly identify active and empty sections  
+- Track the number of students by gender without opening each profile  
+- Improve classroom organization and focus on sections needing attention  
+
+3️⃣ **Direct Call to Parent Feature**  
+- Add a phone number for each student’s parent ✅  
+- Open a student card and see the parent’s number immediately  
+- Click the 📞 button next to the number to call directly without saving it in your phone  
+
+💡 **Tip:** These visual indicators and quick access tools save time and make managing multiple sections much easier for teachers and professors!
+
+---
+
 ## 🧠 Tips for Better Use
 
 - Keep student names short for easier browsing  
