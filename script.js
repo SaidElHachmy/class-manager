@@ -928,7 +928,7 @@ if (phone !== "") {
                 <div style="flex:1;">
 <p>
   <span style="color:#0078ff"><strong>${t("studentNameCard")}:</strong></span> 
-  ${truncateText(student.name, 18) || "—"}
+  ${truncateText(student.name, 28) || "—"}
 </p>
                     <p><span style="color:#0078ff"><strong>${t("id")}:</strong></span> ${student.id || "—"}</p>
                 </div>
