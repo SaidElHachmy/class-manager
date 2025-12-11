@@ -23,10 +23,53 @@ const translations = {
         
         studentNameCard: "Name",
         gender:"Gender",
-        studentTestCard: "Recent Test Result",
-        studentExamCard: "Recent Exam Result",
-        studentTest: "Test score (e.g., 17/20, 26/30, 37/40)",
-        studentExam: "Exam score (e.g., 17/20, 26/30, 37/40)",
+        
+        semes1: "Semester 1",
+
+studentTestCard: "Test 1",
+studentTest: "Test 1 (example: 17/20, 26/30, 37/40)",
+
+studentTestCard2: "Test 2",
+studentTest2: "Test 2 (example: 17/20, 26/30, 37/40)",
+
+studentTestCard3: "Test 3",
+studentTest3: "Test 3 (example: 17/20, 26/30, 37/40)",
+
+studentExamCard: "Exam 1",
+studentExam: "Exam 1 (example: 17/20, 26/30, 37/40)",
+
+
+semes2: "Semester 2",
+
+studentTestCard4: "Test 1",
+studentTest4: "Test 1 (example: 17/20, 26/30, 37/40)",
+
+studentTestCard5: "Test 2",
+studentTest5: "Test 2 (example: 17/20, 26/30, 37/40)",
+
+studentTestCard6: "Test 3",
+studentTest6: "Test 3 (example: 17/20, 26/30, 37/40)",
+
+studentExamCard2: "Exam 2",
+studentExam2: "Exam 2 (example: 17/20, 26/30, 37/40)",
+
+
+semes3: "Semester 3",
+
+studentTestCard7: "Test 1",
+studentTest7: "Test 1 (example: 17/20, 26/30, 37/40)",
+
+studentTestCard8: "Test 2",
+studentTest8: "Test 2 (example: 17/20, 26/30, 37/40)",
+
+studentTestCard9: "Test 3",
+studentTest9: "Test 3 (example: 17/20, 26/30, 37/40)",
+
+studentExamCard3: "Exam 3",
+studentExam3: "Exam 3 (example: 17/20, 26/30, 37/40)",
+        
+        
+        
         studentNotes: "Notes",
         addStudent: "Add",
         studentDetails: "Student Details",
@@ -59,11 +102,58 @@ const translations = {
         
         studentNameCard: "Nom",
         gender:"Genre",
-        studentTestCard: "Résultat de test récent",
-        studentExamCard: "Résultat d’examen récent",
-        studentTest: "Score du test (par ex., 17/20, 26/30, 37/40)",
-        
-        studentExam: "Score de l'examen (par ex., 17/20, 26/30, 37/40)",
+   
+   
+   
+        semes1: "Semestre 1",
+
+studentTestCard: "Test 1",
+studentTest: "Test 1 (exemple : 17/20, 26/30, 37/40)",
+
+studentTestCard2: "Test 2",
+studentTest2: "Test 2 (exemple : 17/20, 26/30, 37/40)",
+
+studentTestCard3: "Test 3",
+studentTest3: "Test 3 (exemple : 17/20, 26/30, 37/40)",
+
+studentExamCard: "Examen 1",
+studentExam: "Examen 1 (exemple : 17/20, 26/30, 37/40)",
+
+
+semes2: "Semestre 2",
+
+studentTestCard4: "Test 1",
+studentTest4: "Test 1 (exemple : 17/20, 26/30, 37/40)",
+
+studentTestCard5: "Test 2",
+studentTest5: "Test 2 (exemple : 17/20, 26/30, 37/40)",
+
+studentTestCard6: "Test 3",
+studentTest6: "Test 3 (exemple : 17/20, 26/30, 37/40)",
+
+studentExamCard2: "Examen 2",
+studentExam2: "Examen 2 (exemple : 17/20, 26/30, 37/40)",
+
+
+semes3: "Semestre 3",
+
+studentTestCard7: "Test 1",
+studentTest7: "Test 1 (exemple : 17/20, 26/30, 37/40)",
+
+studentTestCard8: "Test 2",
+studentTest8: "Test 2 (exemple : 17/20, 26/30, 37/40)",
+
+studentTestCard9: "Test 3",
+studentTest9: "Test 3 (exemple : 17/20, 26/30, 37/40)",
+
+studentExamCard3: "Examen 3",
+studentExam3: "Examen 3 (exemple : 17/20, 26/30, 37/40)",
+      
+      
+      
+      
+      
+      
         studentNotes: "Notes",
         addStudent: "Ajouter",
         studentDetails: "Détails de l'élève",
@@ -99,18 +189,110 @@ const translations = {
         id: "المعرف",
         studentNameCard: "الاسم",
         gender:"الجنس",
-        studentTestCard: "نتيجة اختبار حديث",
+        
+        
+        
+        semes1: "الفصل الدراسي1",
+        
+        
+        
+        studentTestCard: "الاختبار 1",
+        studentTest: "الاختبار 1 (مثال: 17/20، 26/30، 37/40)",
+        
+ 
+        
+        
+        
+        
+        studentTestCard2: "الاختبار 2",
+        studentTest2: "الاختبار 2 (مثال: 17/20، 26/30، 37/40)",
+
+       
+        studentTestCard3: "الاختبار 3",
+        studentTest3: "الاختبار 3 (مثال: 17/20، 26/30، 37/40)",
+        
+        
+
+
+        
+        studentExamCard: "الامتحان 1",
+        
+        
+        studentExam: "الامتحان 1 (مثال: 17/20، 26/30، 37/40)",
+
+        
+        
+        
+        
+        
+        
+        
+
+        semes2: "الفصل الدراسي 2",
+        
+        
+        
+        studentTestCard4: "الاختبار 1",
+        studentTest4: "الاختبار 1 (مثال: 17/20، 26/30، 37/40)",
+        
+ 
+        
+        
+        
+        
+        studentTestCard5: "الاختبار 2",
+        studentTest5: "الاختبار 2 (مثال: 17/20، 26/30، 37/40)",
+
+       
+        studentTestCard6: "الاختبار 3",
+        studentTest6: "الاختبار 3 (مثال: 17/20، 26/30، 37/40)",
+        
+        
+
+
+        
+        studentExamCard2: "الامتحان 2",
+                
+        
+        studentExam2:"الامتحان 2 (مثال: 17/20، 26/30، 37/40)",
         
 
         
-        studentExamCard: "نتيجة امتحان حديث",
+        
+        semes3: "الفصل الدراسي 3",
         
         
+        
+        studentTestCard7: "الاختبار 1",
+        studentTest7: "الاختبار 1 (مثال: 17/20، 26/30، 37/40)",
+        
+ 
+        
+    
+        
+        
+        
+        studentTestCard8: "الاختبار 2",
+        studentTest8: "الاختبار 2 (مثال: 17/20، 26/30، 37/40)",
+
+       
+        studentTestCard9: "الاختبار 3",
+        studentTest9: "الاختبار 3 (مثال: 17/20، 26/30، 37/40)",
         
         
 
-        studentTest: "درجة الاختبار (مثال: 17/20، 26/30، 37/40)",
-        studentExam: "درجة الامتحان (مثال: 17/20، 26/30، 37/40)",
+
+        
+        studentExamCard3: "الامتحان 3",
+                
+        
+        studentExam3:"الامتحان 3 (مثال: 17/20، 26/30، 37/40)",
+        
+        
+        
+        
+        
+        
        
         studentNotes: "الملاحظات",
         addStudent: "أضف",
@@ -143,10 +325,56 @@ const studentEmoji = document.getElementById('studentEmoji');
 
 const callParents = document.getElementById('callParents');
 
-
+const semes1 = document.getElementById('semes1');
 
 const studentTest = document.getElementById('studentTest');
+
+
+const studentTest2 = document.getElementById('studentTest2');
+
+const studentTest3 = document.getElementById('studentTest3');
+
+
+
 const studentExam = document.getElementById('studentExam');
+
+const studentExam2 = document.getElementById('studentExam2');
+
+const studentExam3 = document.getElementById('studentExam3');
+
+
+
+const semes2 = document.getElementById('semes2');
+
+
+
+
+
+
+const studentTest4 = document.getElementById('studentTest4');
+
+const studentTest5 = document.getElementById('studentTest5');
+
+
+const studentTest6 = document.getElementById('studentTest6');
+
+
+
+const semes3 = document.getElementById('semes3');
+
+
+const studentTest7 = document.getElementById('studentTest7');
+
+
+const studentTest8 = document.getElementById('studentTest8');
+
+const studentTest9 = document.getElementById('studentTest9');
+
+
+
+
+
+
 const studentNotes = document.getElementById('studentNotes');
 const addStudentBtn = document.getElementById('addStudentBtn');
 const studentsList = document.getElementById('studentsList');
@@ -277,7 +505,53 @@ function updateTexts() {
     sectionInput.placeholder = t("sectionPlaceholder");
     studentNameInput.placeholder = t("studentName");
     studentIDInput.placeholder = t("studentID");
+    semes1.textContent = t("semes1");
+    
     studentTest.placeholder = t("studentTest");
+    
+    studentTest2.placeholder = t("studentTest2");
+    
+    studentTest3.placeholder = t("studentTest3");
+    
+    studentExam.placeholder = t("studentExam");
+    
+    
+    
+    
+    
+    semes2.textContent = t("semes2");
+    
+
+    
+        studentTest4.placeholder = t("studentTest4");
+        
+        
+    
+        studentTest5.placeholder = t("studentTest5");
+        
+        studentTest6.placeholder = t("studentTest6");
+        
+        studentExam2.placeholder = t("studentExam2");
+        
+
+        
+    semes3.textContent = t("semes3");
+    
+    
+        
+        studentTest7.placeholder = t("studentTest7");
+        
+        
+        studentTest8.placeholder = t("studentTest8");
+        
+        
+        studentTest9.placeholder = t("studentTest9");
+        
+        
+        studentExam3.placeholder = t("studentExam3");
+        
+    
+    
     
     callParents.callParents = t("callParents");
     callParents.placeholder = t("callParentsPlaceholder");
@@ -285,7 +559,7 @@ function updateTexts() {
     
     
     
-    studentExam.placeholder = t("studentExam");
+    
     studentNotes.placeholder = t("studentNotes");
     addStudentBtn.textContent = t("addStudent");
     activeSectionName.textContent = activeSectionIndex !== null
@@ -754,7 +1028,35 @@ addStudentBtn.onclick = () => {
         emoji: studentEmoji.value,
         notes: studentNotes.value.trim(),
         test: studentTest.value.trim() || "–",
+        
+        test2: studentTest2.value.trim() || "–",
+        
+        test3: studentTest3.value.trim() || "–",
+        
+        
+        
+        test4: studentTest4.value.trim() || "–",
+        
+        
+        test5: studentTest5.value.trim() || "–",
+        
+        test6: studentTest6.value.trim() || "–",
+        
+        test7: studentTest7.value.trim() || "–",
+        
+        test8: studentTest8.value.trim() || "–",
+        
+        test9: studentTest9.value.trim() || "–",
+        
+        
+        exam3: studentExam3.value.trim() || "–",
+        
+        exam2: studentExam2.value.trim() || "–",
+        
         exam: studentExam.value.trim() || "–"
+    
+        
+        
     };
 
     if (!student.name) return;
@@ -763,7 +1065,7 @@ addStudentBtn.onclick = () => {
     data.sections[activeSectionIndex].students.push(student);
 
     // clear the input fields
-    studentNameInput.value = studentIDInput.value = callParents.value = studentNotes.value = studentTest.value = studentExam.value = "";
+    studentNameInput.value = studentIDInput.value = callParents.value = studentNotes.value = studentTest.value =studentTest2.value=studentTest3.value=studentTest4.value=studentTest5.value=studentTest6.value=studentTest7.value=studentTest8.value=studentTest9.value=studentExam3.value=studentExam2.value= studentExam.value = "";
 
     saveAll();
 
@@ -782,33 +1084,126 @@ const messageTranslations = {
     
     intro: "يسرّني التواصل معكم بخصوص الطالب/الطالبة:",
     
-    name: "الاسم:",
-    section: "القسم:",
-    test: "نتيجة اختبار حديث:",
-    exam: "نتيجة امتحان حديث:",
-    notes: "ملاحظات:",
+    name: "الاسم",
+    section: "القسم",
+    
+    semes1: "الفصل الدراسي 1",
+
+test: "الاختبار 1",
+
+test2: "الاختبار 2",
+
+test3: "الاختبار 3",
+
+exam: "الامتحان 1",
+
+semes2: "الفصل الدراسي 2",
+
+test4: "الاختبار 4",
+
+test5: "الاختبار 5",
+
+test6: "الاختبار 6",
+
+exam2: "الامتحان 2",
+
+semes3: "الفصل الدراسي 3",
+
+test7: "الاختبار 7",
+
+test8: "الاختبار 8",
+
+test9: "الاختبار 9",
+
+exam3: "الامتحان 3",
+    
+    
+    
+    
+    notes: "ملاحظات",
     question: "نتمنى منكم الاطلاع على هذه المعلومات، وفي حال لديكم أي ملاحظات أو استفسارات، يسعدنا تواصلكم دائماً",
     thanks: "شكراً لتعاونكم المستمر وتمنياتنا لأبنائنا بالتوفيق والنجاح الدائم"
   },
   fr: {
     hello: "Bonjour, j’espère que vous allez bien",
     intro: "Je souhaite vous contacter au sujet de votre enfant :",
-    name: "Nom :",
-    section: "Section :",
-    test: "Résultat de test récent :",
-    exam: "Résultat d’examen récent :",
-    notes: "Notes :",
+    name: "Nom",
+    section: "Section",
+    
+    
+    
+    semes1: "Semestre 1",
+
+test: "Test 1",
+
+test2: "Test 2",
+
+test3: "Test 3",
+
+exam: "Examen 1",
+
+semes2: "Semestre 2",
+
+test4: "Test 4",
+
+test5: "Test 5",
+
+test6: "Test 6",
+
+exam2: "Examen 2",
+
+semes3: "Semestre 3",
+
+test7: "Test 7",
+
+test8: "Test 8",
+
+test9: "Test 9",
+
+exam3: "Examen 3",
+    
+    
+    notes: "Notes",
     question: "Nous vous invitons à prendre connaissance de ces informations et restons à votre disposition pour toute question ou remarque",
     thanks: "Merci pour votre collaboration continue et nos meilleurs vœux de réussite à nos élèves"
   },
   en: {
     hello: "Hello, hope you are doing well",
     intro: "I would like to contact you regarding your student:",
-    name: "Name:",
-    section: "Section:",
-    test: "Recent Test Result:",
-    exam: "Recent Exam Result:",
-    notes: "Notes:",
+    name: "Name",
+    section: "Section",
+    semes1: "Semester 1",
+
+test: "Test 1",
+
+test2: "Test 2",
+
+test3: "Test 3",
+
+exam: "Exam 1",
+
+semes2: "Semester 2",
+
+test4: "Test 4",
+
+test5: "Test 5",
+
+test6: "Test 6",
+
+exam2: "Exam 2",
+
+semes3: "Semester 3",
+
+test7: "Test 7",
+
+test8: "Test 8",
+
+test9: "Test 9",
+
+exam3: "Exam 3",
+    
+    
+    notes: "Notes",
     question: "Please review the information, and feel free to reach out if you have any questions or remarks",
     thanks: "Thank you for your continued cooperation and best wishes for our students’ success"
   }
@@ -829,15 +1224,33 @@ function contactParentsWhatsApp(student) {
 ${tr.hello}
 
 ${tr.intro}
-${tr.name} ${student.name || "—"}
-${tr.section} ${sectionName || "—"}
-${tr.test} ${student.test || "—"}
-${tr.exam} ${student.exam || "—"}
-${tr.notes} ${student.notes || "—"}
+
+
+*${tr.name}* : ${student.name || "—"}
+
+*${tr.section}* : ${sectionName || "—"}
+
+━━━━━━━━━━━━━━━━━━━━━━
+📚 *${tr.semes1}*
+📝 *${tr.test}* : ${student.test || "—"} | 📝 *${tr.test2}* : ${student.test2 || "—"}
+📝 *${tr.test3}* : ${student.test3 || "—"} | 🎯 *${tr.exam}* : ${student.exam || "—"}
+━━━━━━━━━━━━━━━━━━━━━━
+📚 *${tr.semes2}*
+📝 *${tr.test4}* : ${student.test4 || "—"} | 📝 *${tr.test5}* : ${student.test5 || "—"}
+📝 *${tr.test6}* : ${student.test6 || "—"} | 🎯 *${tr.exam2}* : ${student.exam2 || "—"}
+━━━━━━━━━━━━━━━━━━━━━━
+📚 *${tr.semes3}*
+📝 *${tr.test7}* : ${student.test7 || "—"} | 📝 *${tr.test8}* : ${student.test8 || "—"}
+📝 *${tr.test9}* : ${student.test9 || "—"} | 🎯 *${tr.exam3}* : ${student.exam2 || "—"}
+━━━━━━━━━━━━━━━━━━━━━━
+💡 *${tr.notes}* : ${student.notes || "—"}
+━━━━━━━━━━━━━━━━━━━━━━
 
 ${tr.question}
 
 ${tr.thanks}
+
+
 `.trim();
 
 const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -968,9 +1381,150 @@ if (phone !== "") {
   <span style="color:#0078ff"><strong>${t("studentNotes")}:</strong></span> 
   ${truncateText(student.notes, 350) || "﹏﹏﹏﹏﹏﹏﹏"}
 </p>
+                    <hr style="margin:15px 0;border:1px dashed #0078ff;">
+                                         <br />
+            <label style="font-weight:bold" for="First Semester">${t("semes1")}</label>
+            
+<div id="editDivRow" style="">
+            
             <p><span style="color:#0078ff"><strong>${t("studentTestCard")}:</strong></span> ${student.test || "–"}</p>
+
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard2")}:</strong></span> ${student.test2 || "–"}</p>
+            
+            
+            
+            
+            
+            
+            
+            </div>
+            
+            
+            <div id="editDivRow" style="">
+            
+            
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard3")}:</strong></span> ${student.test3 || "–"}</p>
+            
+            
+            
+            
             <p><span style="color:#0078ff"><strong>${t("studentExamCard")}:</strong></span> ${student.exam || "–"}</p>
+            
+            
+            
+            
+            
+            
+            
+            </div>
+            
+            
+            
+
+            
+            
+
+            
+            
+            
+                    <hr style="margin:15px 0;border:1px dashed #0078ff;">
+                                         <br />
+            <label style="font-weight:bold" for="Second Semester">${t("semes2")}</label>
+            
+            
+<div id="editDivRow" style="">
+            
+            
+            
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard4")}:</strong></span> ${student.test4 || "–"}</p>
+
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard5")}:</strong></span> ${student.test5 || "–"}</p>
+            
+            
+            
+            
+            
+            
+            
+            
+            </div>
+            
+            
+            <div id="editDivRow" style="">
+            
+            
+            
+            
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard6")}:</strong></span> ${student.test6 || "–"}</p>
+            
+            
+            
+            
+            <p><span style="color:#0078ff"><strong>${t("studentExamCard2")}:</strong></span> ${student.exam2 || "–"}</p>
+            
+            
+            
+            
+            
+            
+            </div>
+            
+            
+
+            
+            
+
+                    
+            <hr style="margin:15px 0;border:1px dashed #0078ff;">
+                                         <br />
+            <label style="font-weight:bold" for="Third Semester">${t("semes3")}</label>
+            
+            
+<div id="editDivRow" style="">
+            
+            
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard7")}:</strong></span> ${student.test7 || "–"}</p>
+
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard8")}:</strong></span> ${student.test8 || "–"}</p>
+            
+            
+            
+            
+            
+            
+            
+            </div>
+            
+            
+            <div id="editDivRow" style="">
+            
+            
+            
+            <p><span style="color:#0078ff"><strong>${t("studentTestCard9")}:</strong></span> ${student.test9 || "–"}</p>
+            
+            
+            
+            
+            <p><span style="color:#0078ff"><strong>${t("studentExamCard3")}:</strong></span> ${student.exam3 || "–"}</p>
+            
+            
+            
+            
+            
+            
+            </div>
+            
+            
+            
+            
+
+
+            
+            
         </div>
+
+
+
     `;
 
     studentModalOverlay.style.display = "flex";
@@ -1084,15 +1638,198 @@ function openEditStudentModal(sectionIndex, studentIndex) {
                 <textarea id="editStudentNotes" style="width:95%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;height:80px;">${escapeHtml(student.notes)}</textarea>
             </div>
 
-            <div style="display:flex;gap:12px;margin-top:12px;">
+            <div style="display:flex;gap:12px;margin-top:12px;flex-direction:column;border:none">
+
+            <label style="font-weight:bold" for="First Semester">${t("semes1")}</label>
+            
+            
+            <div id="editDivRow" style="">
+                
+                
                 <div style="flex:1;">
                     <label for="editStudentTest" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard')}</label>
-                    <input id="editStudentTest" type="text" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test)}" />
+                    <input id="editStudentTest" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test)}" />
                 </div>
+                
+                <div style="flex:1;">
+                    <label for="editStudentTest2" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard2')}</label>
+                    <input id="editStudentTest2" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test2)}" />
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            <div id="editDivRow" style="">
+                            
+                <div style="flex:1;">
+                    <label for="editStudentTest3" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard3')}</label>
+                    <input id="editStudentTest3" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test3)}" />
+                </div>
+                
+                
+                                
+                
                 <div style="flex:1;">
                     <label for="editStudentExam" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentExamCard')}</label>
-                    <input id="editStudentExam" type="text" style="width:90%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
+                    <input id="editStudentExam" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam)}" />
                 </div>
+                
+                
+                
+                
+                
+                
+            
+            </div>
+            
+
+                
+                
+
+                
+                <label style="font-weight:bold" for="Second Semester">${t("semes2")}</label>
+                
+                
+                
+            
+            
+            <div id="editDivRow" style="">
+            
+                            
+                
+
+                <div style="flex:1;">
+                    <label for="editStudentTest4" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard4')}</label>
+                    <input id="editStudentTest4" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test4)}" />
+                </div>
+
+
+                <div style="flex:1;">
+                    <label for="editStudentTest5" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard5')}</label>
+                    <input id="editStudentTest5" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test5)}" />
+                </div>
+                
+            
+            
+            </div>
+            
+            
+            
+            
+            
+            <div id="editDivRow" style="">
+            
+                
+
+                
+                <div style="flex:1;">
+                    <label for="editStudentTest6" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard6')}</label>
+                    <input id="editStudentTest6" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test6)}" />
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                <div style="flex:1;">
+                    <label for="editStudentExam2" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentExamCard2')}</label>
+                    <input id="editStudentExam2" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam2)}" />
+                </div>
+                
+            
+            
+            
+            </div>
+            
+            
+            
+
+                
+                <label style="font-weight:bold" for="Third Semester">${t("semes3")}</label>
+                
+                
+                
+            
+            <div id="editDivRow" style="">
+            
+                
+                
+
+                <div style="flex:1;">
+                    <label for="editStudentTest7" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard7')}</label>
+                    <input id="editStudentTest7" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test7)}" />
+                </div>
+
+
+                <div style="flex:1;">
+                    <label for="editStudentTest8" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard8')}</label>
+                    <input id="editStudentTest8" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test8)}" />
+                </div>
+                
+                
+            
+            
+            </div>
+            
+            
+            
+            
+            
+            
+            <div id="editDivRow" style="">
+            
+            
+
+                <div style="flex:1;">
+                    <label for="editStudentTest9" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentTestCard9')}</label>
+                    <input id="editStudentTest9" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.test9)}" />
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                <div style="flex:1;">
+                    <label for="editStudentExam3" style="display:block;margin-bottom:6px;font-weight:600;color:#0078ff;">${t('studentExamCard3')}</label>
+                    <input id="editStudentExam3" type="text" style="width:80%;padding:8px;border-radius:8px;border:1px solid #b7c9f3;" value="${escapeHtml(student.exam3)}" />
+                </div>
+                
+                
+                
+                
+            
+            
+            
+            
+            </div>
+            
+
+                
+                
+                
+                
+                
+                
+                
             </div>
         </div>
     `;
@@ -1120,7 +1857,43 @@ function openEditStudentModal(sectionIndex, studentIndex) {
         const newSectionIdx = parseInt(document.getElementById('editStudentSection')?.value, 10);
         const newNotes = (document.getElementById('editStudentNotes')?.value || '').trim();
         const newTest = (document.getElementById('editStudentTest')?.value || '').trim() || '–';
+        
+        const newTest2 = (document.getElementById('editStudentTest2')?.value || '').trim() || '–';
+        
+        
+        const newTest3 = (document.getElementById('editStudentTest3')?.value || '').trim() || '–';
+        
+        
+        const newTest4 = (document.getElementById('editStudentTest4')?.value || '').trim() || '–';
+        
+        
+        const newTest5 = (document.getElementById('editStudentTest5')?.value || '').trim() || '–';
+        
+        
+        const newTest6 = (document.getElementById('editStudentTest6')?.value || '').trim() || '–';
+        
+        
+        const newTest7 = (document.getElementById('editStudentTest7')?.value || '').trim() || '–';
+        
+        
+        const newTest8 = (document.getElementById('editStudentTest8')?.value || '').trim() || '–';
+        
+        const newTest9 = (document.getElementById('editStudentTest9')?.value || '').trim() || '–';
+        
+        
+        
+        
+        
+        
         const newExam = (document.getElementById('editStudentExam')?.value || '').trim() || '–';
+        
+        const newExam2 = (document.getElementById('editStudentExam2')?.value || '').trim() || '–';
+        
+        const newExam3 = (document.getElementById('editStudentExam3')?.value || '').trim() || '–';
+        
+        
+        
+        
         const newPhoneCall = (document.getElementById('editCallParents')?.value || '').trim();
 
         const studentObj = {
@@ -1129,7 +1902,22 @@ function openEditStudentModal(sectionIndex, studentIndex) {
             emoji: newEmoji,
             notes: newNotes,
             test: newTest,
+            test2: newTest2,
+            test3: newTest3,
+            test4: newTest4,
+            test5: newTest5,
+            test6: newTest6,
+            test7: newTest7,
+            test8: newTest8,
+            test9: newTest9,
+            
+            
+            
+            
+            
             exam: newExam,
+            exam2: newExam2,
+            exam3: newExam3,
             phoneCall: newPhoneCall // ✅ keep it consistent
         };
         
