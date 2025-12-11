@@ -77,6 +77,456 @@ body {
     cursor: pointer;
 }
 
+
+#IdEmoji{
+    display: flex;
+    
+    border-radius: 8px;
+    justify-content: space-between;
+    
+    border:none ;
+    
+    min-width: 90px;
+    padding: 2px 5px;
+    min-height: 40px;
+    background-color: none;
+}
+
+#IdDiv{
+    display: flex;
+    
+    margin: 0px;
+    border-radius: 8px;
+    padding: 2px 4px;
+    justify-content: center;
+    border: none;
+    min-width: 50px;
+    min-height: 40px;
+    background-color: none;
+}
+#IdDiv input{
+    min-width:90px;
+    
+    min-height:8px;
+    
+    padding:2px 4px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+
+
+
+#EmojiDiv{
+    display: flex;
+    
+    margin: 0px;
+    padding: 2px 4px;
+    border-radius: 8px;
+    justify-content: center;
+    border: none;
+    min-width: 20px;
+    min-height: 40px;
+    background-color: none;
+}
+
+
+#EmojiDiv select{
+    
+    padding:2px 8px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+
+
+
+
+
+#semesDivInput1{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    border-radius: 8px;
+    justify-content: center;
+    border:2px solid #0078ff ;
+    min-width: 270px;
+    padding: 2px 5px;
+    min-height: 100px;
+    background-color: none;
+    
+    
+    
+}
+#semes1{
+    font-weight:bold;
+    color:#0078ff;
+}
+
+
+
+#semesDivInput2{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    border-radius: 8px;
+    justify-content: center;
+    border:2px solid #0078ff ;
+    min-width: 270px;
+    padding: 2px 5px;
+    min-height: 100px;
+    background-color: none;
+    
+    
+}
+#semes2{
+    font-weight:bold;
+    color:#0078ff;
+}
+
+
+#semesDivInput3{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    border-radius: 8px;
+    justify-content: center;
+    border:2px solid #0078ff ;
+    min-width: 270px;
+    padding: 2px 5px;
+    min-height: 100px;
+    background-color: none;
+    
+    
+    
+}
+#semes3{
+    font-weight:bold;
+    color:#0078ff;
+}
+
+
+
+
+#testExam{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    border-radius: 8px;
+    justify-content: center;
+    border: none;
+    min-width: 285px;
+    
+    min-height: 90px;
+    background-color: none;
+}
+
+#testDiv1{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+#testDiv1 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+#editDivRow{
+    display:flex;
+    justify-content: space-between;
+    background-color: none;
+    border: none;
+    border-radius: 8px;
+    padding: 2px 5px;
+    width: 255px;
+    height: auto;
+}
+
+
+
+
+#testDiv2{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+#testDiv2 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+
+#testDiv3{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+#testDiv3 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+#testDiv4{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+#testDiv4 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+#testDiv5{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+#testDiv5 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+#testDiv6{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+#testDiv6 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+#testDiv7{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+#testDiv7 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+#testDiv8{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+#testDiv8 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+#testDiv9{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+#testDiv9 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+
+
+
+
+
+#examDiv1{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+#examDiv1 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+
+
+#examDiv2{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+#examDiv2 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+
+
+#examDiv3{
+    width:auto;
+    height:auto;
+    border:none;
+    
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+#examDiv3 input{
+    min-width:285px;
+    min-height:30px;
+
+
+    padding:4px 8px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    background-color: none;
+}
+
+
+
+
+
+
+
+
+
 #contact-Lang {
     display: flex;
     justify-content: center;
@@ -480,4 +930,4 @@ footer {
 footer span {
     font-weight: bold;
     color: #0078ff;
-}
+   }
