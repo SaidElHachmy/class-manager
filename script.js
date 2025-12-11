@@ -1231,19 +1231,19 @@ ${tr.intro}
 *${tr.section}* : ${sectionName || "—"}
 
 ━━━━━━━━━━━━━━━━━━━━━━
-📚 *${tr.semes1}*
-📝 *${tr.test}* : ${student.test || "—"} | 📝 *${tr.test2}* : ${student.test2 || "—"}
-📝 *${tr.test3}* : ${student.test3 || "—"} | 🎯 *${tr.exam}* : ${student.exam || "—"}
+*${tr.semes1}*
+[ *${tr.test}* : ${student.test || "—"} ] [  *${tr.test2}* : ${student.test2 || "—"} ]
+[ *${tr.test3}* : ${student.test3 || "—"} ] [  *${tr.exam}* : ${student.exam || "—"} ]
 ━━━━━━━━━━━━━━━━━━━━━━
-📚 *${tr.semes2}*
-📝 *${tr.test4}* : ${student.test4 || "—"} | 📝 *${tr.test5}* : ${student.test5 || "—"}
-📝 *${tr.test6}* : ${student.test6 || "—"} | 🎯 *${tr.exam2}* : ${student.exam2 || "—"}
+*${tr.semes2}*
+[ *${tr.test4}* : ${student.test4 || "—"} ] [  *${tr.test5}* : ${student.test5 || "—"} ]
+[ *${tr.test6}* : ${student.test6 || "—"} ] [  *${tr.exam2}* : ${student.exam2 || "—"} ]
 ━━━━━━━━━━━━━━━━━━━━━━
-📚 *${tr.semes3}*
-📝 *${tr.test7}* : ${student.test7 || "—"} | 📝 *${tr.test8}* : ${student.test8 || "—"}
-📝 *${tr.test9}* : ${student.test9 || "—"} | 🎯 *${tr.exam3}* : ${student.exam2 || "—"}
+*${tr.semes3}*
+[ *${tr.test7}* : ${student.test7 || "—"} ] [  *${tr.test8}* : ${student.test8 || "—"} ]
+[ *${tr.test9}* : ${student.test9 || "—"} ] [  *${tr.exam3}* : ${student.exam3 || "—"} ]
 ━━━━━━━━━━━━━━━━━━━━━━
-💡 *${tr.notes}* : ${student.notes || "—"}
+*${tr.notes}* : ${student.notes || "—"}
 ━━━━━━━━━━━━━━━━━━━━━━
 
 ${tr.question}
