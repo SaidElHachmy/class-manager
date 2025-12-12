@@ -1264,93 +1264,12 @@ window.open(url, "_blank");
 
 
 
-//wait
-
-// ===============================
-// ====== Translations ===========
-const studentMessageTranslations = {
-  ar: {
-    hello: "السلام عليكم، أرجو أن تكونوا بخير",
-    intro: "يسرّني التواصل معكم بخصوص الطالب/الطالبة:",
-    name: "الاسم",
-    section: "القسم",
-    semes1: "الفصل الدراسي 1",
-    test: "الاختبار",
-    test2: "الاختبار 2",
-    test3: "الاختبار 3",
-    exam: "الامتحان",
-    semes2: "الفصل الدراسي 2",
-    test4: "الاختبار 4",
-    test5: "الاختبار 5",
-    test6: "الاختبار 6",
-    exam2: "الامتحان 2",
-    semes3: "الفصل الدراسي 3",
-    test7: "الاختبار 7",
-    test8: "الاختبار 8",
-    test9: "الاختبار 9",
-    exam3: "الامتحان 3",
-    notes: "ملاحظات",
-    question: "نتمنى منكم الاطلاع على هذه المعلومات، وفي حال لديكم أي ملاحظات أو استفسارات، يسعدنا تواصلكم دائماً",
-    thanks: "شكراً لتعاونكم المستمر وتمنياتنا لأبنائنا بالتوفيق والنجاح الدائم"
-  },
-  fr: {
-    hello: "Bonjour, j’espère que vous allez bien",
-    intro: "Je souhaite vous contacter au sujet de votre enfant :",
-    name: "Nom",
-    section: "Section",
-    semes1: "Semestre 1",
-    test: "Test",
-    test2: "Test 2",
-    test3: "Test 3",
-    exam: "Examen",
-    semes2: "Semestre 2",
-    test4: "Test 4",
-    test5: "Test 5",
-    test6: "Test 6",
-    exam2: "Examen 2",
-    semes3: "Semestre 3",
-    test7: "Test 7",
-    test8: "Test 8",
-    test9: "Test 9",
-    exam3: "Examen 3",
-    notes: "Notes",
-    question: "Nous vous invitons à prendre connaissance de ces informations et restons à votre disposition pour toute question ou remarque",
-    thanks: "Merci pour votre collaboration continue et nos meilleurs vœux de réussite à nos élèves"
-  },
-  en: {
-    hello: "Hello, hope you are doing well",
-    intro: "I would like to contact you regarding your student:",
-    name: "Name",
-    section: "Section",
-    semes1: "Semester 1",
-    test: "Test",
-    test2: "Test 2",
-    test3: "Test 3",
-    exam: "Exam",
-    semes2: "Semester 2",
-    test4: "Test 4",
-    test5: "Test 5",
-    test6: "Test 6",
-    exam2: "Exam 2",
-    semes3: "Semester 3",
-    test7: "Test 7",
-    test8: "Test 8",
-    test9: "Test 9",
-    exam3: "Exam 3",
-    notes: "Notes",
-    question: "Please review the information, and feel free to reach out if you have any questions or remarks",
-    thanks: "Thank you for your continued cooperation and best wishes for our students’ success"
-  }
-};
 
 
 
 
-//wait
 
 
-
-let currentStudent = null;
 
 
 
@@ -1361,8 +1280,6 @@ let currentStudent = null;
 
 function openStudentModal(student) {
     if (!studentCardContent || !studentModalOverlay) return;
-    currentStudent = student; // ✅ save for download
-
 
     const sectionName = data.sections[activeSectionIndex]?.name || '';
 
@@ -1373,8 +1290,6 @@ const phone = student.phoneCall && student.phoneCall.trim() !== "–" ? student.
 let phoneUI = `
     <span style="color:#0078ff"><strong>${t("callParents")}:</strong></span>
     ${phone || "—"}
-    
-    
 `;
 
 if (phone !== "") {
@@ -1421,9 +1336,6 @@ if (phone !== "") {
         💬
         
         </button>
-        
-
-        
         
         
         
@@ -1623,74 +1535,6 @@ if (closeStudentModal) closeStudentModal.onclick = () => {
     studentModalOverlay.style.display = 'none';
     document.body.style.overflow = '';
 };
-
-
-
-//wait
-
-
-// ===============================
-// ====== Download Function ======
-function downloadStudentReport(student) {
-  const lang = currentLang || "en";
-  const tr = studentMessageTranslations[lang]; // <-- Must be defined here
-
-  const studentSectionName = data.sections[activeSectionIndex]?.name || "—";
-
-  const content = `
-${tr.hello}
-
-${tr.intro}
-
-${tr.name}: ${student.name || "—"}
-${tr.section}: ${studentSectionName}
-
-────────────────────────
-
-${tr.semes1}
-[ ${tr.test} 1: ${student.test || "—"} ] [ ${tr.test} 2: ${student.test2 || "—"} ]
-[ ${tr.test} 3: ${student.test3 || "—"} ] [ ${tr.exam} 1: ${student.exam || "—"} ]
-
-────────────────────────
-
-${tr.semes2}
-[ ${tr.test} 4: ${student.test4 || "—"} ] [ ${tr.test} 5: ${student.test5 || "—"} ]
-[ ${tr.test} 6: ${student.test6 || "—"} ] [ ${tr.exam} 2: ${student.exam2 || "—"} ]
-
-────────────────────────
-
-${tr.semes3}
-[ ${tr.test} 7: ${student.test7 || "—"} ] [ ${tr.test} 8: ${student.test8 || "—"} ]
-[ ${tr.test} 9: ${student.test9 || "—"} ] [ ${tr.exam} 3: ${student.exam3 || "—"} ]
-
-────────────────────────
-
-${tr.notes}: ${student.notes || "—"}
-
-────────────────────────
-
-${tr.question}
-
-${tr.thanks}
-`.trim();
-
-
-  const filename = `${student.name || "student"}_(${studentSectionName})_${lang}.txt`.replace(/\s+/g, "_");
-
-  const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = filename;
-  link.click();
-}
-
-
-//wait
-
-
-
-
-
 
 
 
