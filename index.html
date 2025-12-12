@@ -372,6 +372,23 @@
     <div class="modal">
         <h2 id="studentModalTitle" style="color:#0078ff;text-shadow: 1.5px 1px lightblue;">Student Details</h2>
         <div id="studentCardContent"></div>
+<button
+    style="
+        margin:10px auto;
+        padding:6px 12px;
+        font-size:16px;
+        border:2px solid #0078ff;
+        color:white;
+        background:#0078ff;
+        border-radius:6px;
+        cursor:pointer;
+        filter: drop-shadow(0 0 5px #0078ff);
+    "
+    onclick="downloadStudentReport(currentStudent)"
+>
+    📄 Download Report
+</button>
+
         <button id="closeStudentModal" class="modal-close">Close</button>
     </div>
 </div>
@@ -406,6 +423,17 @@
     © <span id="year"></span> <span id="author"style="color:black; font-weight: normal;">Said ElHachmy</span>. <span id="allRights" style="color:black; font-weight: normal;">All rights reserved.</span>
 </footer>
 
-<script src="script.js"></script>
+
+
+
+    <!-- jsPDF -->
+  <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    
+    <script src="script.js"></script>
+
+
+
 </body>
-  </html>
+</html>
