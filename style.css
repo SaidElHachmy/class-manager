@@ -614,7 +614,7 @@ body {
    CONTAINERS
    ======================================================= */
 .container {
-    padding: 25px;
+    padding: 15px;
     display: flex;
     justify-content: center;
 }
@@ -624,9 +624,10 @@ body {
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(14px);
     border-radius: 18px;
-    padding: 22px;
+    padding: 10px;
     box-shadow: 0 12px 35px rgba(0, 0, 80, 0.12);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+   border: 2px solid rgba(255, 255, 255, 0.5);
+  
     animation: fadeIn 0.4s ease-in-out;
 }
 
