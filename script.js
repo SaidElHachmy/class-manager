@@ -1529,6 +1529,22 @@ if (phone !== "") {
 
     studentModalOverlay.style.display = "flex";
     document.body.style.overflow = "hidden";
+    
+    
+    // ✅ SCROLL AFTER MODAL IS VISIBLE
+    setTimeout(() => {
+        const studentModalTitle = document.getElementById("studentModalTitle");
+        if (studentModalTitle) {
+            studentModalTitle.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    }, 50);
+
+
+    
+    
 }
 
 if (closeStudentModal) closeStudentModal.onclick = () => {
