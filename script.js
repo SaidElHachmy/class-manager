@@ -9,6 +9,14 @@ const translations = {
     en: {
         title: "Class Manager",
         contact: "Contact",
+        instructions: `
+⚠️ <strong>Important Notice</strong><br><br>
+
+Your data is saved <span style="color:red;font-weight:bold">only on this device</span> (local storage).<br>
+It is <span style="color:red;font-weight:bold">not online</span> and <span style="color:red;font-weight:bold">cannot be recovered</span> if the device is lost or reset.<br><br>
+
+📝 Please keep <span style="color:red;font-weight:bold">another copy</span> of important student data (paper or safe method).
+`,
         addSection: "Add",
         noSection: "No section selected",
         sectionPlaceholder: "New section name",
@@ -88,6 +96,15 @@ studentExam3: "Exam 3 (example: 17/20, 26/30, 37/40)",
     fr: {
         title: "Gestion Classe",
         contact: "Contact",
+        instructions: `
+⚠️ <strong>Avis important</strong><br><br>
+
+Vos données sont enregistrées <span style="color:red;font-weight:bold">uniquement sur cet appareil</span> (stockage local).<br>
+Elles <span style="color:red;font-weight:bold">ne sont pas en ligne</span> et <span style="color:red;font-weight:bold">ne peuvent pas être récupérées</span> en cas de perte ou de réinitialisation de l’appareil.<br><br>
+
+📝 Veuillez conserver <span style="color:red;font-weight:bold">une autre copie</span> des données importantes des élèves (sur papier ou par une méthode sécurisée).
+`,
+        
         addSection: "Ajouter",
         noSection: "Aucune section sélectionnée",
         sectionPlaceholder: "Nom de la nouvelle section",
@@ -172,6 +189,15 @@ studentExam3: "Examen 3 (exemple : 17/20, 26/30, 37/40)",
     ar: {
         title: "مدير الصف",
         contact: "اتصال",
+       instructions: `
+⚠️ <strong>تنبيه هام</strong><br><br>
+
+يتم حفظ بياناتك <span style="color:red;font-weight:bold">على هذا الجهاز فقط</span> (التخزين المحلي).<br>
+<span style="color:red;font-weight:bold">لا يتم حفظها على الإنترنت</span> و<span style="color:red;font-weight:bold">لا يمكن استعادتها</span> في حال فقدان الجهاز أو إعادة ضبطه.<br><br>
+
+📝 يرجى الاحتفاظ <span style="color:red;font-weight:bold">بنسخة أخرى</span> من بيانات الطلاب المهمة (ورقية أو بطريقة آمنة).
+`,
+
         addSection: "أضف",
         noSection: "لم يتم تحديد أي قسم",
         sectionPlaceholder: "اسم القسم الجديد",
@@ -501,6 +527,13 @@ function refreshEditButtonsText() {
 function updateTexts() {
     siteTitle.textContent = `👨‍🏫 ${t("title")}`;
     contactLink.textContent = t("contact");
+    
+    document.getElementById('instructions').innerHTML = t("instructions");
+    
+    
+    
+    
+    
     addSectionBtn.textContent = t("addSection");
     sectionInput.placeholder = t("sectionPlaceholder");
     studentNameInput.placeholder = t("studentName");
@@ -569,6 +602,11 @@ function updateTexts() {
     closeStudentModal.textContent = t("close");
     confirmYes.textContent = t("yes");
     confirmCancel.textContent = t("cancel");
+    
+    
+    
+    
+    
 
     document.getElementById('author').textContent = t("author");
     document.getElementById('allRights').textContent = t("allRights");
