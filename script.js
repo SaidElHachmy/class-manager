@@ -1137,21 +1137,21 @@ exam: "الامتحان 1",
 
 semes2: "الفصل الدراسي 2",
 
-test4: "الاختبار 4",
+test4: "الاختبار 1",
 
-test5: "الاختبار 5",
+test5: "الاختبار 2",
 
-test6: "الاختبار 6",
+test6: "الاختبار 3",
 
 exam2: "الامتحان 2",
 
 semes3: "الفصل الدراسي 3",
 
-test7: "الاختبار 7",
+test7: "الاختبار 1",
 
-test8: "الاختبار 8",
+test8: "الاختبار 2",
 
-test9: "الاختبار 9",
+test9: "الاختبار 3",
 
 exam3: "الامتحان 3",
     
@@ -1182,21 +1182,21 @@ exam: "Examen 1",
 
 semes2: "Semestre 2",
 
-test4: "Test 4",
+test4: "Test 1",
 
-test5: "Test 5",
+test5: "Test 2",
 
-test6: "Test 6",
+test6: "Test 3",
 
 exam2: "Examen 2",
 
 semes3: "Semestre 3",
 
-test7: "Test 7",
+test7: "Test 1",
 
-test8: "Test 8",
+test8: "Test 2",
 
-test9: "Test 9",
+test9: "Test 2",
 
 exam3: "Examen 3",
     
