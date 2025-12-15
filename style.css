@@ -931,4 +931,142 @@ footer {
 footer span {
     font-weight: bold;
     color: #0078ff;
+}
+
+
+/* =======================================================
+   RESPONSIVE DESIGN
+   ======================================================= */
+
+/* ---------- Small devices (phones) ---------- */
+@media (max-width: 480px) {
+
+    .top {
+        font-size: 18px;
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .top-right .contact-tab {
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .left {
+        width: 100%;
+        padding: 8px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    textarea {
+        height: 70px;
+    }
+
+    .btn-primary {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .section-item,
+    .student-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .student-item .btn-open,
+    .section-item .btn-del,
+    .student-item .btn-del {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* semester & tests boxes */
+    #semesDivInput1,
+    #semesDivInput2,
+    #semesDivInput3 {
+        min-width: 100%;
+    }
+
+    #testDiv1 input,
+    #testDiv2 input,
+    #testDiv3 input,
+    #testDiv4 input,
+    #testDiv5 input,
+    #testDiv6 input,
+    #testDiv7 input,
+    #testDiv8 input,
+    #testDiv9 input,
+    #examDiv1 input,
+    #examDiv2 input,
+    #examDiv3 input {
+        min-width: 100%;
+    }
+
+    .modal {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+/* ---------- Medium devices (tablets) ---------- */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        width: 95%;
+    }
+
+    .top {
+        font-size: 22px;
+    }
+
+    .section-item,
+    .student-item {
+        font-size: 15px;
+    }
+}
+
+/* ---------- Large screens ---------- */
+@media (min-width: 1200px) {
+
+    .left {
+        width: 450px;
+    }
+
+    .modal {
+        width: 380px;
+    }
+}
+
+/* ---------- General safety ---------- */
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling for modals */
+.modal,
+.modal-overlay {
+    scroll-behavior: smooth;
    }
