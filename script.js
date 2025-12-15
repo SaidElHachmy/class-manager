@@ -1222,21 +1222,21 @@ exam: "Exam 1",
 
 semes2: "Semester 2",
 
-test4: "Test 4",
+test4: "Test 1",
 
-test5: "Test 5",
+test5: "Test 2",
 
-test6: "Test 6",
+test6: "Test 3",
 
 exam2: "Exam 2",
 
 semes3: "Semester 3",
 
-test7: "Test 7",
+test7: "Test 1",
 
-test8: "Test 8",
+test8: "Test 2",
 
-test9: "Test 9",
+test9: "Test 3",
 
 exam3: "Exam 3",
     
