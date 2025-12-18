@@ -1052,10 +1052,21 @@ function renderStudents() {
         studentsList.prepend(div);
     });
 }
+document.getElementById("customAlertOk").onclick = () => {
+    document.getElementById("customAlert").style.display = "none";
+};
+
+function showCustomAlert(message) {
+    const alertDiv = document.getElementById("customAlert");
+    const alertMsg = document.getElementById("customAlertMessage");
+
+    alertMsg.innerHTML = message;
+    alertDiv.style.display = "flex";
+}
 
 addStudentBtn.onclick = () => {
     if (activeSectionIndex === null) { 
-        alert(t("selectSectionFirst")); 
+        showCustomAlert(t("selectSectionFirst"));
         return; 
     }
 
