@@ -171,6 +171,11 @@ body {
     }
 }
 
+.confirm-name {
+    color: #0078ff;
+    font-weight: bold;
+}
+
 
 
 #IdEmoji{
