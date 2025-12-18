@@ -88,8 +88,15 @@ studentExam3: "Exam 3 (example: 17/20, 26/30, 37/40)",
         cancel: "Cancel",
         selectSectionFirst: "Select a section first!",
         noSectionSelected: "No section selected!",
-        confirmDeleteStudent: "Are you sure you want to delete student : '{name}' ?",
-        confirmDeleteSection: "Are you sure you want to delete section : '{name}' ?",
+        confirmDeleteStudent: "Are you sure you want to delete student : ' {name} ' ?",
+//  confirmDeleteSection: "Are you sure you want to delete section : '{name}' ?",
+     
+     
+     confirmDeleteSection: `Are you sure you want to delete : ' <span class="confirm-name">{name}</span> ' ?`,
+     
+     
+     
+     
         author: "Said ElHachmy",
         allRights: "All rights reserved."
     },
@@ -181,8 +188,12 @@ studentExam3: "Examen 3 (exemple : 17/20, 26/30, 37/40)",
         cancel: "Annuler",
         selectSectionFirst: "Sélectionnez d'abord une section !",
         noSectionSelected: "Aucune section sélectionnée !",
-        confirmDeleteStudent: "Êtes-vous sûr de vouloir supprimer l'élève : '{name}' ?",
-        confirmDeleteSection: "Êtes-vous sûr de vouloir supprimer la section : '{name}' ?",
+        confirmDeleteStudent: "Êtes-vous sûr de vouloir supprimer l'élève : ' {name} ' ?",
+//   confirmDeleteSection: "Êtes-vous sûr de vouloir supprimer la section : '{name}' ?",
+      
+      confirmDeleteSection: `Êtes-vous sûr de vouloir supprimer la section : ' <span class="confirm-name">{name}</span> ' ?`,
+       
+       
         author: "Said ElHachmy",
         allRights: "Tous droits réservés."
     },
@@ -330,8 +341,17 @@ studentExam3: "Examen 3 (exemple : 17/20, 26/30, 37/40)",
         cancel: "إلغاء",
         selectSectionFirst: "حدد قسمًا أولاً!",
         noSectionSelected: "لم يتم تحديد أي قسم!",
-        confirmDeleteStudent: "هل أنت متأكد أنك تريد حذف الطالب : '{name}' ؟",
-        confirmDeleteSection: "هل أنت متأكد أنك تريد حذف القسم : '{name}' ؟",
+        
+                
+        confirmDeleteStudent: "هل أنت متأكد أنك تريد حذف الطالب : ' {name} ' ؟",
+        
+        
+        
+//  confirmDeleteSection: "هل أنت متأكد أنك تريد حذف القسم : '{name}' ؟",
+      
+      confirmDeleteSection: `هل أنت متأكد من حذف : ' <span class="confirm-name">{name}</span> ' ؟`,
+      
+      
         author: "سعيد الهاشمي",
         allRights: "جميع الحقوق محفوظة."
     }
@@ -620,12 +640,14 @@ function updateTexts() {
 // ===============================
 // ====== Confirm Dialog =========
 // ===============================
+// ===============================
+// ====== Confirm Dialog =========
+// ===============================
 function showConfirm(message, callback) {
-    confirmMessage.textContent = message;
+    confirmMessage.innerHTML = message; // ✅ allows styled HTML
     confirmOverlay.classList.remove("hidden");
     confirmCallback = callback;
 }
-
 // ===============================
 // ====== Section Functions ======
 // ===============================
@@ -844,6 +866,44 @@ addSectionBtn.onclick = () => {
 
 
 
+// ===============================
+// ====== Helper Functions =======
+// ===============================
+function generateUniqueSectionName(name) {
+    let baseName = name.trim();
+    let count = 0;
+
+    data.sections.forEach(section => {
+        if (section.name === baseName || section.name.startsWith(baseName + " (")) {
+            count++;
+        }
+    });
+
+    if (count === 0) return baseName;
+    return `${baseName} (${count})`;
+}
+
+// ===============================
+// ====== Section Handling =======
+// ===============================
+addSectionBtn.onclick = () => {
+    let inputName = sectionInput.value.trim();
+    if (!inputName) return;
+
+    let uniqueName = generateUniqueSectionName(inputName);
+
+    data.sections.push({
+        name: uniqueName,
+        students: []
+    });
+
+    saveAll();
+    updateTexts();
+    sectionInput.value = "";
+};
+
+
+
 
 
 // ===============================
@@ -1010,10 +1070,20 @@ function renderStudents() {
         delBtn.className = "btn-del";
         delBtn.textContent = t("cancel");
 
-        
+        /*
         delBtn.onclick = () => showConfirm(t("confirmDeleteStudent", { name: student.name }), () => {
     section.students.splice(index, 1);
     saveAll();
+    
+    */
+    delBtn.onclick = () => showConfirm(
+    t("confirmDeleteStudent", {
+        name: `<span class="confirm-name">${student.name}</span>`
+    }),
+    () => {
+        section.students.splice(index, 1);
+        saveAll();
+
 
     // update count for this section
     const cntEl = document.getElementById(`count-${activeSectionIndex}`);
