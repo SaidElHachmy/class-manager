@@ -212,7 +212,7 @@ studentExam3: "Examen 3 (exemple : 17/20, 26/30, 37/40)",
         addSection: "أضف",
         noSection: "لم يتم تحديد أي قسم",
         sectionPlaceholder: "اسم القسم الجديد",
-        studentName: "اسم الطالب",
+        studentName: "اسم الطالب/الطالبة",
         studentID: "المعرف (الافتراضي 00001)",
         section: "القسم",
         
@@ -333,7 +333,7 @@ studentExam3: "Examen 3 (exemple : 17/20, 26/30, 37/40)",
        
         studentNotes: "الملاحظات",
         addStudent: "أضف",
-        studentDetails: "تفاصيل الطالب",
+        studentDetails: "تفاصيل الطالب/الطالبة",
         studentOpen: "فتح",
         close: "إغلاق",
         save: "حفظ",
@@ -343,7 +343,7 @@ studentExam3: "Examen 3 (exemple : 17/20, 26/30, 37/40)",
         noSectionSelected: "لم يتم تحديد أي قسم!",
         
                 
-        confirmDeleteStudent: "هل أنت متأكد أنك تريد حذف الطالب : ' {name} ' ؟",
+        confirmDeleteStudent: "هل أنت متأكد أنك تريد حذف الطالب/الطالبة : ' {name} ' ؟",
         
         
         
