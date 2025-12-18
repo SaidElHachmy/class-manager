@@ -78,6 +78,101 @@ body {
 }
 
 
+/* ===============================
+   CUSTOM ALERT (Select Section)
+   =============================== */
+#customAlert {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 60, 0.45);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 15px;
+}
+
+/* Alert box */
+.customAlertBox {
+    background: rgba(255, 255, 255, 0.92);
+    border: 2px solid #0078ff;
+    border-radius: 18px;
+    padding: 22px 18px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 120, 255, 0.35);
+    animation: alertPop 0.25s ease;
+}
+
+/* Message text */
+#customAlertMessage {
+    font-size: 16px;
+    font-weight: 500;
+    color: #003a8c;
+    margin-bottom: 18px;
+    line-height: 1.4;
+}
+
+/* 👍 Button */
+#customAlertOk {
+    background: linear-gradient(135deg, #0078ff, #005fd9);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 120, 255, 0.35);
+}
+
+/* Hover & tap feedback */
+#customAlertOk:hover {
+    background: linear-gradient(135deg, #0063d4, #004cb1);
+    transform: scale(1.05);
+}
+
+#customAlertOk:active {
+    transform: scale(0.95);
+}
+
+/* Animation */
+@keyframes alertPop {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===============================
+   SMALL SCREENS (PHONES)
+   =============================== */
+@media (max-width: 480px) {
+    .customAlertBox {
+        max-width: 90%;
+        padding: 20px 16px;
+    }
+
+    #customAlertMessage {
+        font-size: 15px;
+    }
+
+    #customAlertOk {
+        width: 100%;
+        font-size: 17px;
+        padding: 10px;
+    }
+}
+
+
+
 #IdEmoji{
     display: flex;
     
@@ -863,6 +958,8 @@ textarea {
 /* =======================================================
    CONFIRM BOX
    ======================================================= */
+   
+   /*
 .confirm-overlay {
     position: fixed;
     inset: 0;
@@ -915,6 +1012,120 @@ textarea {
 .btn-cancel:hover {
     background: #d92c2c;
 }
+
+
+*/
+
+
+/* =======================================================
+   CONFIRM BOX (ENHANCED)
+   ======================================================= */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 40, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+
+    padding: 15px;
+}
+
+/* Hide state */
+.confirm-overlay.hidden {
+    display: none;
+}
+
+/* Confirm box */
+.confirm-box {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+
+    width: 100%;
+    max-width: 320px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 80, 0.25);
+    animation: confirmPop 0.25s ease;
+}
+
+/* Buttons */
+.btn-yes,
+.btn-cancel {
+    padding: 10px 16px;
+    margin: 6px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s ease;
+
+    min-width: 110px;
+}
+
+/* YES */
+.btn-yes {
+    background: linear-gradient(135deg, #0078ff, #005fd0);
+    color: white;
+}
+
+.btn-yes:hover {
+    background: linear-gradient(135deg, #0063d4, #004cb1);
+    transform: scale(1.05);
+}
+
+/* CANCEL */
+.btn-cancel {
+    background: linear-gradient(135deg, #ff4c4c, #d92c2c);
+    color: white;
+}
+
+.btn-cancel:hover {
+    background: linear-gradient(135deg, #e63a3a, #b82525);
+    transform: scale(1.05);
+}
+
+/* Click feedback */
+.btn-yes:active,
+.btn-cancel:active {
+    transform: scale(0.95);
+}
+
+/* Animation */
+@keyframes confirmPop {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* =======================================================
+   MOBILE OPTIMIZATION
+   ======================================================= */
+@media (max-width: 480px) {
+    .confirm-box {
+        max-width: 90%;
+        padding: 18px 16px;
+    }
+
+    .btn-yes,
+    .btn-cancel {
+        width: 100%;
+        margin: 6px 0;
+        font-size: 16px;
+    }
+}
+
 
 /* =======================================================
    FOOTER
