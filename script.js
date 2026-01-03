@@ -362,6 +362,7 @@ studentExam3: "Examen 3 (exemple : 17/20, 26/30, 37/40)",
 // ===============================
 const sectionInput = document.getElementById('sectionInput');
 const addSectionBtn = document.getElementById('addSectionBtn');
+
 const sectionsList = document.getElementById('sectionsList');
 const activeSectionName = document.getElementById('activeSectionName');
 
@@ -715,7 +716,7 @@ function renderSections() {
         sectionInsideNameDiv.style.minWidth="70px"
         sectionInsideNameDiv.style.padding="3px 5px"
         sectionInsideNameDiv.style.borderRadius="3px"
-        sectionInsideNameDiv.style.margin="2px 3px"
+        sectionInsideNameDiv.style.margin="0px auto"
         
         
         
@@ -730,7 +731,7 @@ function renderSections() {
         sectionInsideDiv.style.width="auto"
         sectionInsideDiv.style.padding="3px 5px"
         sectionInsideDiv.style.borderRadius="3px"
-        sectionInsideDiv.style.margin="2px 3px"
+        sectionInsideDiv.style.margin="0px auto"
         
         
         
@@ -778,7 +779,20 @@ function renderSections() {
         
         sectionInsideNameDiv.appendChild(document.createElement('span')).textContent = truncateText(section.name, 48);
         
-        
+        const timeSpan = document.createElement("small");
+
+if (section.createdAt) {
+    timeSpan.textContent =
+        "⏰ " + new Date(section.createdAt).toLocaleString(currentLang);
+} else {
+    timeSpan.textContent = "⏰ —";
+}
+
+timeSpan.style.display = "block";
+timeSpan.style.fontSize = "10px";
+timeSpan.style.color = "#666";
+
+
         
 // Student Count Box (placed before edit/delete buttons)
 const countDiv = document.createElement('button');
@@ -807,9 +821,13 @@ sectionInsideDiv.appendChild(countDiv);
 sectionInsideDiv.appendChild(editBtn);
 
 sectionInsideDiv.appendChild(delBtn);
-        
-        
-        
+        const downBreak=document.createElement("div")
+        downBreak.style.border="none";
+        downBreak.style.margin="0px auto"
+
+
+
+downBreak.appendChild(timeSpan);
         
         
         
@@ -820,6 +838,9 @@ sectionInsideDiv.appendChild(delBtn);
 
         div.appendChild(sectionInsideNameDiv);
         div.appendChild(sectionInsideDiv);
+        
+        div.appendChild(downBreak);
+        
 
         div.onclick = () => {
             activeSectionIndex = index;
@@ -852,13 +873,18 @@ if (countEl) {
         
         
         sectionsList.prepend(div);
+        
     });
 }
 
 addSectionBtn.onclick = () => {
     const name = sectionInput.value.trim();
     if (!name) return;
-    data.sections.push({ name, students: [] });
+    data.sections.push({
+    name: uniqueName,
+    students: [],
+    createdAt: Date.now() // ✅ هذا هو الحل
+});
     sectionInput.value = "";
     saveAll();
     updateTexts();
@@ -882,6 +908,12 @@ function generateUniqueSectionName(name) {
     if (count === 0) return baseName;
     return `${baseName} (${count})`;
 }
+data.sections.forEach(section => {
+    if (!section.createdAt) {
+        section.createdAt = Date.now();
+    }
+});
+saveAll();
 
 // ===============================
 // ====== Section Handling =======
@@ -893,9 +925,10 @@ addSectionBtn.onclick = () => {
     let uniqueName = generateUniqueSectionName(inputName);
 
     data.sections.push({
-        name: uniqueName,
-        students: []
-    });
+    name: uniqueName,
+    students: [],
+    createdAt: Date.now() // ✅ هذا هو الحل
+});
 
     saveAll();
     updateTexts();
